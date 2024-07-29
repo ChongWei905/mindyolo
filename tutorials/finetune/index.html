@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#finetune" class="md-skip">
+        <a href="#fine-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -691,44 +691,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#finetune_1" class="md-nav__link">
-    自定义数据集finetune流程
+  <a href="#custom-dataset-finetune-process" class="md-nav__link">
+    Custom Dataset Finetune Process
   </a>
   
-    <nav class="md-nav" aria-label="自定义数据集finetune流程">
+    <nav class="md-nav" aria-label="Custom Dataset Finetune Process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    数据集格式转换
+  <a href="#dataset-conversion" class="md-nav__link">
+    Dataset Conversion
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#yaml" class="md-nav__link">
-    编写yaml配置文件
+  <a href="#write-yaml-configuration-file" class="md-nav__link">
+    Write yaml configuration file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    下载预训练模型
+  <a href="#download-pre-trained-model" class="md-nav__link">
+    Download pre-trained model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#finetune_2" class="md-nav__link">
-    模型微调(Finetune)
+  <a href="#model-fine-tuning-finetune" class="md-nav__link">
+    Model fine-tuning (Finetune)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    可视化推理
+  <a href="#visual-reasoning" class="md-nav__link">
+    Visual reasoning
   </a>
   
 </li>
@@ -1063,44 +1063,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#finetune_1" class="md-nav__link">
-    自定义数据集finetune流程
+  <a href="#custom-dataset-finetune-process" class="md-nav__link">
+    Custom Dataset Finetune Process
   </a>
   
-    <nav class="md-nav" aria-label="自定义数据集finetune流程">
+    <nav class="md-nav" aria-label="Custom Dataset Finetune Process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    数据集格式转换
+  <a href="#dataset-conversion" class="md-nav__link">
+    Dataset Conversion
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#yaml" class="md-nav__link">
-    编写yaml配置文件
+  <a href="#write-yaml-configuration-file" class="md-nav__link">
+    Write yaml configuration file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    下载预训练模型
+  <a href="#download-pre-trained-model" class="md-nav__link">
+    Download pre-trained model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#finetune_2" class="md-nav__link">
-    模型微调(Finetune)
+  <a href="#model-fine-tuning-finetune" class="md-nav__link">
+    Model fine-tuning (Finetune)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    可视化推理
+  <a href="#visual-reasoning" class="md-nav__link">
+    Visual reasoning
   </a>
   
 </li>
@@ -1141,27 +1141,26 @@
   
 
 
-<h1 id="finetune">Finetune<a class="headerlink" href="#finetune" title="Permanent link">&para;</a></h1>
-<!-- BEGIN INCLUDE ../../../examples/finetune_SHWD/README.md -->
-<h3 id="finetune_1">自定义数据集finetune流程<a class="headerlink" href="#finetune_1" title="Permanent link">&para;</a></h3>
-<p>本文以安全帽佩戴检测数据集(SHWD)为例，介绍自定义数据集在MindYOLO上进行finetune的主要流程。</p>
-<h4 id="_1">数据集格式转换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><a href="https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/tree/master">SHWD数据集</a>采用voc格式的数据标注，其文件目录如下所示：
-<div class="highlight"><pre><span></span><code>             ROOT_DIR
-                ├── Annotations
-                │        ├── 000000.xml
-                │        └── 000002.xml
-                ├── ImageSets
-                │       └── Main
-                │             ├── test.txt
-                │             ├── train.txt
-                │             ├── trainval.txt
-                │             └── val.txt
-                └── JPEGImages
+<h1 id="fine-tuning">fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h1>
+<h3 id="custom-dataset-finetune-process">Custom Dataset Finetune Process<a class="headerlink" href="#custom-dataset-finetune-process" title="Permanent link">&para;</a></h3>
+<p>This article takes the Safety Hat Wearing Detection Dataset (SHWD) as an example to introduce the main process of finetune on MindYOLO with a custom data set.</p>
+<h4 id="dataset-conversion">Dataset Conversion<a class="headerlink" href="#dataset-conversion" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/tree/master">SHWD Dataset</a> uses data labels in voc format, and its file directory is as follows:
+<div class="highlight"><pre><span></span><code>             Root directory
+                ├── Comments
+                │ ├── 000000.xml
+                │ └── 000002.xml
+                ├── Image Collection
+                │ └── Main
+                │ ├── test.txt
+                │ ├── train.txt
+                │ ├── trainval.txt
+                │ └── val.txt
+                └── JPEG image
                         ├── 000000.jpg
                         └── 000002.jpg
 </code></pre></div>
-Annotations文件夹下的xml文件为每张图片的标注信息，主要内容如下：
+The xml file under the Annotations folder contains annotation information for each picture. The main contents are as follows:
 <div class="highlight"><pre><span></span><code>&lt;annotation&gt;
   &lt;folder&gt;JPEGImages&lt;/folder&gt;
   &lt;filename&gt;000377.jpg&lt;/filename&gt;
@@ -1188,76 +1187,75 @@ Annotations文件夹下的xml文件为每张图片的标注信息，主要内容
     &lt;/bndbox&gt;
   &lt;/object&gt;
 </code></pre></div>
-其中包含多个object, object中的name为类别名称，xmin, ymin, xmax, ymax则为检测框左上角和右下角的坐标。</p>
-<p>MindYOLO支持的数据集格式为YOLO格式，详情可参考<a href="../../how_to_guides/data_preparation/">数据准备</a></p>
-<p>由于MindYOLO在验证阶段选用图片名称作为image_id，因此图片名称只能为数值类型，而不能为字符串类型，还需要对图片进行改名。对SHWD数据集格式的转换包含如下步骤：
-* 将图片复制到相应的路径下并改名
-* 在根目录下相应的txt文件中写入该图片的相对路径
-* 解析xml文件，在相应路径下生成对应的txt标注文件
-* 验证集还需生成最终的json文件</p>
-<p>详细实现可参考<a href="../../../examples/finetune_SHWD/convert_shwd2yolo.py">convert_shwd2yolo.py</a>，运行方式如下：</p>
+It contains multiple objects. The name in object is the category name, and xmin, ymin, xmax, and ymax are the coordinates of the upper left corner and lower right corner of the detection frame.</p>
+<p>The data set format supported by MindYOLO is YOLO format. For details, please refer to <a href="../../how_to_guides/data_preparation/">Data Preparation</a></p>
+<p>Since MindYOLO selects the image name as image_id during the verification phase, the image name can only be of numeric type, not of string type, and the image needs to be renamed. Conversion to SHWD data set format includes the following steps:
+* Copy the image to the corresponding path and rename it
+* Write the relative path of the image in the corresponding txt file in the root directory
+* Parse the xml file and generate the corresponding txt annotation file under the corresponding path
+* The verification set also needs to generate the final json file</p>
+<p>For detailed implementation, please refer to <a href="https://github.com/mindspore-lab/mindyolo/blob/master/examples/finetune_SHWD/convert_shwd2yolo.py">convert_shwd2yolo.py</a>. The operation method is as follows:</p>
 <p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/finetune_SHWD/convert_shwd2yolo.py<span class="w"> </span>--root_dir<span class="w"> </span>/path_to_shwd/SHWD
 </code></pre></div>
-运行以上命令将在不改变原数据集的前提下，在同级目录生成yolo格式的SHWD数据集。</p>
-<h4 id="yaml">编写yaml配置文件<a class="headerlink" href="#yaml" title="Permanent link">&para;</a></h4>
-<p>配置文件主要包含数据集、数据增强、loss、optimizer、模型结构涉及的相应参数，由于MindYOLO提供yaml文件继承机制，可只将需要调整的参数编写为yolov7-tiny_shwd.yaml，并继承MindYOLO提供的原生yaml文件即可，其内容如下：
+Running the above command will generate a SHWD data set in yolo format in the same directory without changing the original data set.</p>
+<h4 id="write-yaml-configuration-file">Write yaml configuration file<a class="headerlink" href="#write-yaml-configuration-file" title="Permanent link">&para;</a></h4>
+<p>The configuration file mainly contains the corresponding parameters related to the data set, data enhancement, loss, optimizer, and model structure. Since MindYOLO provides a yaml file inheritance mechanism, you can only write the parameters that need to be adjusted as yolov7-tiny_shwd.yaml and inherit the native ones provided by MindYOLO. yaml file, its content is as follows:
 <div class="highlight"><pre><span></span><code>__BASE__: [
   &#39;../../configs/yolov7/yolov7-tiny.yaml&#39;,
 ]
 
-per_batch_size: 16 # 单卡batchsize，总的batchsize=per_batch_size * device_num
+per_batch_size: 16 # Single card batchsize, total batchsize=per_batch_size * device_num
 img_size: 640 # image sizes
 weight: ./yolov7-tiny_pretrain.ckpt
-strict_load: False # 是否按严格加载ckpt内参数，默认True，若设成False，当分类数不一致，丢掉最后一层分类器的weight
-log_interval: 10 # 每log_interval次迭代打印一次loss结果
+strict_load: False # Whether to strictly load the internal parameters of ckpt. The default is True. If set to False, when the number of classifications is inconsistent, the weight of the last layer of classifiers will be discarded.
+log_interval: 10 #Print the loss result every log_interval iterations
 
 data:
   dataset_name: shwd
-  train_set: ./SHWD/train.txt # 实际训练数据路径
+  train_set: ./SHWD/train.txt # Actual training data path
   val_set: ./SHWD/val.txt
   test_set: ./SHWD/val.txt
-  nc: 2 # 分类数
+  nc: 2 # Number of categories
   # class names
-  names: [ &#39;person&#39;,  &#39;hat&#39; ] # 每一类的名字
+  names: [ &#39;person&#39;, &#39;hat&#39; ] # The name of each category
 
 optimizer:
-  lr_init: 0.001  # initial learning rate
+  lr_init: 0.001 # initial learning rate
 </code></pre></div>
-* <code>__BASE__</code>为一个列表，表示继承的yaml文件所在路径，可以继承多个yaml文件
-* per_batch_size和img_size分别表示单卡上的batch_size和数据处理图片采用的图片尺寸
-* weight为上述提到的预训练模型的文件路径，strict_load表示丢弃shape不一致的参数
-* log_interval表示日志打印间隔
-* data字段下全部为数据集相关参数，其中dataset_name为自定义数据集名称，train_set、val_set、test_set分别为保存训练集、验证集、测试集图片路径的txt文件路径，nc为类别数量，names为类别名称
-* optimizer字段下的lr_init为经过warm_up之后的初始化学习率，此处相比默认参数缩小了10倍</p>
-<p>参数继承关系和参数说明可参考<a href="../../../tutorials/configuration_CN.md">configuration_CN.md</a>。</p>
-<h4 id="_2">下载预训练模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>可选用MindYOLO提供的<a href="../../../benchmark_results.md">模型仓库</a>作为自定义数据集的预训练模型，预训练模型在COCO数据集上已经有较好的精度表现，相比从头训练，加载预训练模型一般会拥有更快的收敛速度以及更高的最终精度，并且大概率能避免初始化不当导致的梯度消失、梯度爆炸等问题。</p>
-<p>自定义数据集类别数通常与COCO数据集不一致，MindYOLO中各模型的检测头head结构跟数据集类别数有关，直接将预训练模型导入可能会因为shape不一致而导入失败，可以在yaml配置文件中设置strict_load参数为False，MindYOLO将自动舍弃shape不一致的参数，并抛出该module参数并未导入的告警</p>
-<h4 id="finetune_2">模型微调(Finetune)<a class="headerlink" href="#finetune_2" title="Permanent link">&para;</a></h4>
-<p>模型微调过程中，可首先按照默认配置进行训练，如效果不佳，可考虑调整以下参数：
-* 学习率可调小一些，防止loss难以收敛
-* per_batch_size可根据实际显存占用调整，通常per_batch_size越大，梯度计算越精确
-* epochs可根据loss是否收敛进行调整
-* anchor可根据实际物体大小进行调整</p>
-<p>由于SHWD训练集只有约6000张图片，选用yolov7-tiny模型进行训练。
-* 在多卡NPU/GPU上进行分布式模型训练，以8卡为例:</p>
+* <code>__BASE__</code> is a list, indicating the path of the inherited yaml file. Multiple yaml files can be inherited.
+* per_batch_size and img_size respectively represent the batch_size on a single card and the image size used for data processing images.
+* weight is the file path of the pre-trained model mentioned above, and strict_load means discarding parameters with inconsistent shapes.
+* log_interval represents the log printing interval
+* All parameters under the data field are data set related parameters, where dataset_name is the name of the custom data set, train_set, val_set, and test_set are the txt file paths that save the training set, validation set, and test set image paths respectively, nc is the number of categories, and names is classification name
+* lr_init under the optimizer field is the initial learning rate after warm_up, which is 10 times smaller than the default parameters.</p>
+<p>For parameter inheritance relationship and parameter description, please refer to <a href="../configuration/">CONFIGURATION</a>.</p>
+<h4 id="download-pre-trained-model">Download pre-trained model<a class="headerlink" href="#download-pre-trained-model" title="Permanent link">&para;</a></h4>
+<p>You can choose the <a href="../../modelzoo/benchmark/">Model Warehouse</a> provided by MindYOLO as the pre-training model for the custom data set. The pre-training model already has better accuracy performance on the COCO data set. Compared with training from scratch, loading a pre-trained model will generally have faster convergence speed and higher final accuracy, and will most likely avoid problems such as gradient disappearance and gradient explosion caused by improper initialization.</p>
+<p>The number of categories in the custom data set is usually inconsistent with the COCO data set. The detection head structure of each model in MindYOLO is related to the number of categories in the data set. Directly importing the pre-trained model may fail due to inconsistent shape. You can configure it in the yaml configuration file. Set the strict_load parameter to False, MindYOLO will automatically discard parameters with inconsistent shapes and throw a warning that the module parameter is not imported.</p>
+<h4 id="model-fine-tuning-finetune">Model fine-tuning (Finetune)<a class="headerlink" href="#model-fine-tuning-finetune" title="Permanent link">&para;</a></h4>
+<p>During the process of model fine-tuning, you can first train according to the default configuration. If the effect is not good, you can consider adjusting the following parameters:
+* The learning rate can be adjusted smaller to prevent loss from being difficult to converge.
+* per_batch_size can be adjusted according to the actual video memory usage. Generally, the larger per_batch_size is, the more accurate the gradient calculation will be.
+* Epochs can be adjusted according to whether the loss converges
+* Anchor can be adjusted according to the actual object size</p>
+<p>Since the SHWD training set only has about 6,000 images, the yolov7-tiny model was selected for training.
+* Distributed model training on multi-card NPU/GPU, taking 8 cards as an example:</p>
 <div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>--allow-run-as-root<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml<span class="w"> </span>--is_parallel<span class="w"> </span>True
 </code></pre></div>
 <ul>
-<li>在单卡NPU/GPU/CPU上训练模型：</li>
+<li>Train the model on a single card NPU/GPU/CPU:</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml<span class="w"> </span>
+<p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml
 </code></pre></div>
-<em>注意：直接用yolov7-tiny默认参数在SHWD数据集上训练，可取得AP50 87.0的精度。将lr_init参数由0.01改为0.001，即可实现ap50为89.2的精度结果。</em></p>
-<h4 id="_3">可视化推理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>使用/demo/predict.py即可用训练好的模型进行可视化推理，运行方式如下：</p>
+*Note: Directly using the default parameters of yolov7-tiny to train on the SHWD data set can achieve an accuracy of AP50 87.0. Changing the lr_init parameter from 0.01 to 0.001 can achieve an accuracy result of ap50 of 89.2. *</p>
+<h4 id="visual-reasoning">Visual reasoning<a class="headerlink" href="#visual-reasoning" title="Permanent link">&para;</a></h4>
+<p>Use /demo/predict.py to use the trained model for visual reasoning. The operation method is as follows:</p>
 <p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml<span class="w"> </span>--weight<span class="o">=</span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--image_path<span class="w"> </span>/path_to_image/IMAGE.jpg
 </code></pre></div>
-推理效果如下：</p>
+The reasoning effect is as follows:</p>
 <div align=center>
 <img width='600' src="https://github.com/yuedongli1/images/raw/master/00006630.jpg"/>
 </div>
-<!-- END INCLUDE -->
 
 
 
