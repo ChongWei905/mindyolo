@@ -694,9 +694,116 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Deployment
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindspore-lite-environment-preparation" class="md-nav__link">
+    MindSpore Lite environment preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-conversion" class="md-nav__link">
+    Model conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lite-test" class="md-nav__link">
+    Lite Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lite-predict" class="md-nav__link">
+    Lite Predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-description" class="md-nav__link">
+    Script description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindx-deployment" class="md-nav__link">
+    MindX Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindir-deployment" class="md-nav__link">
+    MindIR Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onnx-deployment" class="md-nav__link">
+    ONNX deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-and-supported-model-libraries" class="md-nav__link">
+    Standard and supported model libraries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -984,6 +1091,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindspore-lite-environment-preparation" class="md-nav__link">
+    MindSpore Lite environment preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-conversion" class="md-nav__link">
+    Model conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lite-test" class="md-nav__link">
+    Lite Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lite-predict" class="md-nav__link">
+    Lite Predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-description" class="md-nav__link">
+    Script description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindx-deployment" class="md-nav__link">
+    MindX Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindir-deployment" class="md-nav__link">
+    MindIR Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onnx-deployment" class="md-nav__link">
+    ONNX deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-and-supported-model-libraries" class="md-nav__link">
+    Standard and supported model libraries
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1014,33 +1212,31 @@
 
 
 <h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
-<!-- BEGIN INCLUDE ../../../deploy/README.md -->
-<h1 id="mindyolo">MindYOLO部署<a class="headerlink" href="#mindyolo" title="Permanent link">&para;</a></h1>
-<h2 id="_1">依赖<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirement.txt
 </code></pre></div>
-<h2 id="mindspore-lite">MindSpore Lite环境准备<a class="headerlink" href="#mindspore-lite" title="Permanent link">&para;</a></h2>
-<p>参考：<a href="https://mindspore.cn/lite">Lite环境配置</a> <br>
-   注意：MindSpore Lite适配的python环境为3.7，请在安装Lite前准备好python3.7的环境 <br>
-   1. 根据环境，下载配套的tar.gz包和whl包
-   2. 解压tar.gz包并安装对应版本的whl包
+<h2 id="mindspore-lite-environment-preparation">MindSpore Lite environment preparation<a class="headerlink" href="#mindspore-lite-environment-preparation" title="Permanent link">&para;</a></h2>
+<p>Reference: <a href="https://mindspore.cn/lite">Lite environment configuration</a> <br>
+   Note: The python environment that MindSpore Lite is adapted to is 3.7. Please prepare the python3.7 environment before installing Lite <br>
+   1. Depending on the environment, download the matching tar.gz package and whl package.
+   2. Unzip the tar.gz package and install the corresponding version of the whl package
    <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-zxvf<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.tar.gz
 pip<span class="w"> </span>install<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.whl
 </code></pre></div>
-   3. 配置Lite的环境变量
-   LITE_HOME为tar.gz解压出的文件夹路径，推荐使用绝对路径
+   3. Configure Lite environment variables
+   LITE_HOME is the folder path extracted from tar.gz. It is recommended to use the absolute path.
    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LITE_HOME</span><span class="o">=</span>/path/to/mindspore-lite-<span class="o">{</span>version<span class="o">}</span>-<span class="o">{</span>os<span class="o">}</span>-<span class="o">{</span>platform<span class="o">}</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/runtime/lib:<span class="nv">$LITE_HOME</span>/tools/converter/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/tools/converter/converter:<span class="nv">$LITE_HOME</span>/tools/benchmark:<span class="nv">$PATH</span>
 </code></pre></div></p>
-<h2 id="_2">快速开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">模型转换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>ckpt模型转为mindir模型，此步骤可在CPU/Ascend910上运行
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<h3 id="model-conversion">Model conversion<a class="headerlink" href="#model-conversion" title="Permanent link">&para;</a></h3>
+<p>Convert ckpt model to mindir model, this step can be run on CPU/Ascend910
    <div class="highlight"><pre><span></span><code>python<span class="w"> </span>./deploy/export.py<span class="w"> </span>--config<span class="w"> </span>./path_to_config/model.yaml<span class="w"> </span>--weight<span class="w"> </span>./path_to_ckpt/weight.ckpt<span class="w"> </span>--per_batch_size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--file_format<span class="w"> </span>MINDIR<span class="w"> </span>--device_target<span class="w"> </span><span class="o">[</span>CPU/Ascend<span class="o">]</span>
 e.g.
-<span class="c1"># 在CPU上运行</span>
+<span class="c1">#Run on CPU</span>
 python<span class="w"> </span>./deploy/export.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov5/yolov5n.yaml<span class="w"> </span>--weight<span class="w"> </span>yolov5n_300e_mAP273-9b16bd7b.ckpt<span class="w"> </span>--per_batch_size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--file_format<span class="w"> </span>MINDIR<span class="w"> </span>--device_target<span class="w"> </span>CPU
-<span class="c1"># 在Ascend上运行</span>
+<span class="c1"># Run on Ascend</span>
 python<span class="w"> </span>./deploy/export.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov5/yolov5n.yaml<span class="w"> </span>--weight<span class="w"> </span>yolov5n_300e_mAP273-9b16bd7b.ckpt<span class="w"> </span>--per_batch_size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--file_format<span class="w"> </span>MINDIR<span class="w"> </span>--device_target<span class="w"> </span>Ascend
 </code></pre></div></p>
 <h3 id="lite-test">Lite Test<a class="headerlink" href="#lite-test" title="Permanent link">&para;</a></h3>
@@ -1053,27 +1249,27 @@ python<span class="w"> </span>deploy/test.py<span class="w"> </span>--model_type
 e.g.
 python<span class="w"> </span>deploy/predict.py<span class="w"> </span>--model_type<span class="w"> </span>Lite<span class="w"> </span>--model_path<span class="w"> </span>./yolov5n.mindir<span class="w"> </span>--config<span class="w"> </span>./configs/yolov5/yolov5n.yaml<span class="w"> </span>--image_path<span class="w"> </span>./coco/image/val2017/image.jpg
 </code></pre></div>
-<h2 id="_4">脚本说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="script-description">Script description<a class="headerlink" href="#script-description" title="Permanent link">&para;</a></h2>
 <ul>
-<li>predict.py 支持单张图片推理</li>
-<li>test.py 支持COCO数据集推理</li>
-<li>注意：当前只支持在Ascend 310上推理</li>
+<li>predict.py supports single image inference</li>
+<li>test.py supports COCO data set inference</li>
+<li>Note: currently only supports inference on Ascend 310</li>
 </ul>
-<h2 id="mindx">MindX部署<a class="headerlink" href="#mindx" title="Permanent link">&para;</a></h2>
-<p>查看 <a href="../../../deploy/MINDX.md">MINDX</a></p>
-<h2 id="mindir">MindIR部署<a class="headerlink" href="#mindir" title="Permanent link">&para;</a></h2>
-<p>查看 <a href="../../../deploy/MINDIR.md">MINDIR</a></p>
-<h2 id="onnx">ONNX部署<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h2>
-<p><strong>注意:</strong> 仅部分模型支持导出ONNX并使用ONNXRuntime进行部署<br />
-查看 <a href="../../../deploy/ONNX.md">ONNX</a></p>
-<h2 id="_5">标准和支持的模型库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="mindx-deployment">MindX Deployment<a class="headerlink" href="#mindx-deployment" title="Permanent link">&para;</a></h2>
+<p>View <a href="MINDX.md">MINDX</a></p>
+<h2 id="mindir-deployment">MindIR Deployment<a class="headerlink" href="#mindir-deployment" title="Permanent link">&para;</a></h2>
+<p>View <a href="MINDIR.md">MINDIR</a></p>
+<h2 id="onnx-deployment">ONNX deployment<a class="headerlink" href="#onnx-deployment" title="Permanent link">&para;</a></h2>
+<p><strong>Note:</strong> Only some models support exporting ONNX and deploying using ONNXRuntime
+View <a href="ONNX.md">ONNX</a></p>
+<h2 id="standard-and-supported-model-libraries">Standard and supported model libraries<a class="headerlink" href="#standard-and-supported-model-libraries" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolov7">YOLOv7</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolov5">YOLOv5</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolov3">YOLOv3</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolov8">YOLOv8</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolov4">YOLOv4</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../configs/yolox">YOLOX</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolov7">YOLOv7</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolov5">YOLOv5</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolov3">YOLOv3</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolov8">YOLOv8</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolov4">YOLOv4</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../configs/yolox">YOLOX</a></li>
 </ul>
 <table>
 <thead>
@@ -1370,7 +1566,6 @@ python<span class="w"> </span>deploy/predict.py<span class="w"> </span>--model_t
 </tbody>
 </table>
 <p><br></p>
-<!-- END INCLUDE -->
 
 
 
