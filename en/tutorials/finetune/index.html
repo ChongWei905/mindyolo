@@ -1142,9 +1142,9 @@
 
 
 <h1 id="fine-tuning">fine-tuning<a class="headerlink" href="#fine-tuning" title="Permanent link">&para;</a></h1>
-<h3 id="custom-dataset-finetune-process">Custom Dataset Finetune Process<a class="headerlink" href="#custom-dataset-finetune-process" title="Permanent link">&para;</a></h3>
+<h2 id="custom-dataset-finetune-process">Custom Dataset Finetune Process<a class="headerlink" href="#custom-dataset-finetune-process" title="Permanent link">&para;</a></h2>
 <p>This article takes the Safety Hat Wearing Detection Dataset (SHWD) as an example to introduce the main process of finetune on MindYOLO with a custom data set.</p>
-<h4 id="dataset-conversion">Dataset Conversion<a class="headerlink" href="#dataset-conversion" title="Permanent link">&para;</a></h4>
+<h3 id="dataset-conversion">Dataset Conversion<a class="headerlink" href="#dataset-conversion" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset/tree/master">SHWD Dataset</a> uses data labels in voc format, and its file directory is as follows:
 <div class="highlight"><pre><span></span><code>             Root directory
                 ├── Comments
@@ -1198,7 +1198,7 @@ It contains multiple objects. The name in object is the category name, and xmin,
 <p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/finetune_SHWD/convert_shwd2yolo.py<span class="w"> </span>--root_dir<span class="w"> </span>/path_to_shwd/SHWD
 </code></pre></div>
 Running the above command will generate a SHWD data set in yolo format in the same directory without changing the original data set.</p>
-<h4 id="write-yaml-configuration-file">Write yaml configuration file<a class="headerlink" href="#write-yaml-configuration-file" title="Permanent link">&para;</a></h4>
+<h3 id="write-yaml-configuration-file">Write yaml configuration file<a class="headerlink" href="#write-yaml-configuration-file" title="Permanent link">&para;</a></h3>
 <p>The configuration file mainly contains the corresponding parameters related to the data set, data enhancement, loss, optimizer, and model structure. Since MindYOLO provides a yaml file inheritance mechanism, you can only write the parameters that need to be adjusted as yolov7-tiny_shwd.yaml and inherit the native ones provided by MindYOLO. yaml file, its content is as follows:
 <div class="highlight"><pre><span></span><code>__BASE__: [
   &#39;../../configs/yolov7/yolov7-tiny.yaml&#39;,
@@ -1228,11 +1228,11 @@ optimizer:
 * log_interval represents the log printing interval
 * All parameters under the data field are data set related parameters, where dataset_name is the name of the custom data set, train_set, val_set, and test_set are the txt file paths that save the training set, validation set, and test set image paths respectively, nc is the number of categories, and names is classification name
 * lr_init under the optimizer field is the initial learning rate after warm_up, which is 10 times smaller than the default parameters.</p>
-<p>For parameter inheritance relationship and parameter description, please refer to <a href="../configuration/">CONFIGURATION</a>.</p>
-<h4 id="download-pre-trained-model">Download pre-trained model<a class="headerlink" href="#download-pre-trained-model" title="Permanent link">&para;</a></h4>
+<p>For parameter inheritance relationship and parameter description, please refer to <a href="../configuration/">Configuration</a>.</p>
+<h3 id="download-pre-trained-model">Download pre-trained model<a class="headerlink" href="#download-pre-trained-model" title="Permanent link">&para;</a></h3>
 <p>You can choose the <a href="../../modelzoo/benchmark/">Model Warehouse</a> provided by MindYOLO as the pre-training model for the custom data set. The pre-training model already has better accuracy performance on the COCO data set. Compared with training from scratch, loading a pre-trained model will generally have faster convergence speed and higher final accuracy, and will most likely avoid problems such as gradient disappearance and gradient explosion caused by improper initialization.</p>
 <p>The number of categories in the custom data set is usually inconsistent with the COCO data set. The detection head structure of each model in MindYOLO is related to the number of categories in the data set. Directly importing the pre-trained model may fail due to inconsistent shape. You can configure it in the yaml configuration file. Set the strict_load parameter to False, MindYOLO will automatically discard parameters with inconsistent shapes and throw a warning that the module parameter is not imported.</p>
-<h4 id="model-fine-tuning-finetune">Model fine-tuning (Finetune)<a class="headerlink" href="#model-fine-tuning-finetune" title="Permanent link">&para;</a></h4>
+<h3 id="model-fine-tuning-finetune">Model fine-tuning (Finetune)<a class="headerlink" href="#model-fine-tuning-finetune" title="Permanent link">&para;</a></h3>
 <p>During the process of model fine-tuning, you can first train according to the default configuration. If the effect is not good, you can consider adjusting the following parameters:
 * The learning rate can be adjusted smaller to prevent loss from being difficult to converge.
 * per_batch_size can be adjusted according to the actual video memory usage. Generally, the larger per_batch_size is, the more accurate the gradient calculation will be.
@@ -1248,7 +1248,7 @@ optimizer:
 <p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml
 </code></pre></div>
 *Note: Directly using the default parameters of yolov7-tiny to train on the SHWD data set can achieve an accuracy of AP50 87.0. Changing the lr_init parameter from 0.01 to 0.001 can achieve an accuracy result of ap50 of 89.2. *</p>
-<h4 id="visual-reasoning">Visual reasoning<a class="headerlink" href="#visual-reasoning" title="Permanent link">&para;</a></h4>
+<h3 id="visual-reasoning">Visual reasoning<a class="headerlink" href="#visual-reasoning" title="Permanent link">&para;</a></h3>
 <p>Use /demo/predict.py to use the trained model for visual reasoning. The operation method is as follows:</p>
 <p><div class="highlight"><pre><span></span><code>python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<span class="w"> </span>./examples/finetune_SHWD/yolov7-tiny_shwd.yaml<span class="w"> </span>--weight<span class="o">=</span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--image_path<span class="w"> </span>/path_to_image/IMAGE.jpg
 </code></pre></div>
