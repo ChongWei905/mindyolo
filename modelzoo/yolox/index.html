@@ -627,6 +627,26 @@
     Training
   </a>
   
+    <nav class="md-nav" aria-label="Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-distributed-training" class="md-nav__link">
+    - Distributed Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-standalone-training" class="md-nav__link">
+    - Standalone Training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1126,6 +1146,26 @@
     Training
   </a>
   
+    <nav class="md-nav" aria-label="Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-distributed-training" class="md-nav__link">
+    - Distributed Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-standalone-training" class="md-nav__link">
+    - Standalone Training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1332,40 +1372,28 @@
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Please refer to the <a href="../../tutorials/quick_start/">QUICK START</a> in MindYOLO for details.</p>
 <h3 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h3>
-<details open>
-
-#### - Distributed Training
-
-It is easy to reproduce the reported results with the pre-defined training recipe. For distributed training on multiple Ascend 910 devices, please run
+<h4 id="-distributed-training">- Distributed Training<a class="headerlink" href="#-distributed-training" title="Permanent link">&para;</a></h4>
+<p>It is easy to reproduce the reported results with the pre-defined training recipe. For distributed training on multiple Ascend 910 devices, please run
 <div class="highlight"><pre><span></span><code><span class="c1"># distributed training on multiple GPU/Ascend devices</span>
 mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolox/yolox-s.yaml<span class="w"> </span>--device_target<span class="w"> </span>Ascend<span class="w"> </span>--is_parallel<span class="w"> </span>True
-</code></pre></div>
-
-> If the script is executed by the root user, the `--allow-run-as-root` parameter must be added to `mpirun`.
-
-
-Similarly, you can train the model on multiple GPU devices with the above mpirun command.
-
-For detailed illustration of all hyper-parameters, please refer to [config.py](https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/utils/config.py).
-
-**Note:**  As the global batch size  (batch_size x num_devices) is an important hyper-parameter, it is recommended to keep the global batch size unchanged for reproduction.
-
-#### - Standalone Training
-
-If you want to train or finetune the model on a smaller dataset without distributed training, please firstly run:
-
+</code></pre></div></p>
+<blockquote>
+<p>If the script is executed by the root user, the <code>--allow-run-as-root</code> parameter must be added to <code>mpirun</code>.</p>
+</blockquote>
+<p>Similarly, you can train the model on multiple GPU devices with the above mpirun command.</p>
+<p>For detailed illustration of all hyper-parameters, please refer to <a href="https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/utils/config.py">config.py</a>.</p>
+<p><strong>Note:</strong>  As the global batch size  (batch_size x num_devices) is an important hyper-parameter, it is recommended to keep the global batch size unchanged for reproduction.</p>
+<h4 id="-standalone-training">- Standalone Training<a class="headerlink" href="#-standalone-training" title="Permanent link">&para;</a></h4>
+<p>If you want to train or finetune the model on a smaller dataset without distributed training, please firstly run:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># standalone 1st stage training on a CPU/GPU/Ascend device</span>
 python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolox/yolox-s.yaml<span class="w"> </span>--device_target<span class="w"> </span>Ascend
 </code></pre></div>
-
-</details>
-
 <h3 id="validation-and-test">Validation and Test<a class="headerlink" href="#validation-and-test" title="Permanent link">&para;</a></h3>
 <p>To validate the accuracy of the trained model, you can use <code>test.py</code> and parse the checkpoint path with <code>--weight</code>.</p>
 <div class="highlight"><pre><span></span><code>python test.py --config ./configs/yolox/yolox-s.yaml --device_target Ascend --weight /PATH/TO/WEIGHT.ckpt
 </code></pre></div>
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
-<p>See <a href="../../tutorials/quick_start/">here</a>.</p>
+<p>See <a href="../../tutorials/deployment/">here</a>.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <!--- Guideline: Citation format should follow GB/T 7714. -->
 <p>[1] Zheng Ge. YOLOX: Exceeding YOLO Series in 2021. https://arxiv.org/abs/2107.08430, 2021.</p>

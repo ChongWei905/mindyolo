@@ -571,6 +571,40 @@
     Training
   </a>
   
+    <nav class="md-nav" aria-label="Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-pretraining-model" class="md-nav__link">
+    - Pretraining Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-distributed-training" class="md-nav__link">
+    - Distributed Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-standalone-training" class="md-nav__link">
+    - Standalone Training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1126,6 +1160,40 @@
     Training
   </a>
   
+    <nav class="md-nav" aria-label="Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-pretraining-model" class="md-nav__link">
+    - Pretraining Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-distributed-training" class="md-nav__link">
+    - Distributed Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-standalone-training" class="md-nav__link">
+    - Standalone Training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1293,50 +1361,39 @@ AP (65.7% AP50) for the MS COCO dataset at a realtime speed of 65 FPS on Tesla V
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Please refer to the <a href="../../tutorials/quick_start/">QUICK START</a> in MindYOLO for details.</p>
 <h3 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h3>
-<details open>
-
-#### - Pretraining Model
-
-You can get the pre-training model trained on ImageNet2012 from [here](https://download.mindspore.cn/model_zoo/r1.2/cspdarknet53_ascend_v120_imagenet2012_official_cv_bs64_top1acc7854_top5acc9428/cspdarknet53_ascend_v120_imagenet2012_official_cv_bs64_top1acc7854_top5acc9428.ckpt).
-
-To convert it to a loadable ckpt file for mindyolo, please put it in the root directory then run it
+<h4 id="-pretraining-model">- Pretraining Model<a class="headerlink" href="#-pretraining-model" title="Permanent link">&para;</a></h4>
+<p>You can get the pre-training model trained on ImageNet2012 from <a href="https://download.mindspore.cn/model_zoo/r1.2/cspdarknet53_ascend_v120_imagenet2012_official_cv_bs64_top1acc7854_top5acc9428/cspdarknet53_ascend_v120_imagenet2012_official_cv_bs64_top1acc7854_top5acc9428.ckpt">here</a>.</p>
+<p>To convert it to a loadable ckpt file for mindyolo, please put it in the root directory then run it
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>mindyolo/utils/convert_weight_cspdarknet53.py
-</code></pre></div>
-
-#### - Distributed Training
-
-It is easy to reproduce the reported results with the pre-defined training recipe. For distributed training on multiple Ascend 910 devices, please run
+</code></pre></div></p>
+<h4 id="-distributed-training">- Distributed Training<a class="headerlink" href="#-distributed-training" title="Permanent link">&para;</a></h4>
+<p>It is easy to reproduce the reported results with the pre-defined training recipe. For distributed training on multiple Ascend 910 devices, please run
 <div class="highlight"><pre><span></span><code><span class="c1"># distributed training on multiple GPU/Ascend devices</span>
 mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov4/yolov4-silu.yaml<span class="w"> </span>--device_target<span class="w"> </span>Ascend<span class="w"> </span>--is_parallel<span class="w"> </span>True<span class="w"> </span>--epochs<span class="w"> </span><span class="m">320</span>
-</code></pre></div>
-> If the script is executed by the root user, the `--allow-run-as-root` parameter must be added to `mpirun`.
-
-Similarly, you can train the model on multiple GPU devices with the above mpirun command.
-
-For detailed illustration of all hyper-parameters, please refer to [config.py](https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/utils/config.py).
-
-#### Notes 
-- As the global batch size  (batch_size x num_devices) is an important hyper-parameter, it is recommended to keep the global batch size unchanged for reproduction or adjust the learning rate linearly to a new global batch size.
-- If the following warning occurs, setting the environment variable PYTHONWARNINGS='ignore:semaphore_tracker:UserWarning' will fix it.
+</code></pre></div></p>
+<blockquote>
+<p>If the script is executed by the root user, the <code>--allow-run-as-root</code> parameter must be added to <code>mpirun</code>.</p>
+</blockquote>
+<p>Similarly, you can train the model on multiple GPU devices with the above mpirun command.</p>
+<p>For detailed illustration of all hyper-parameters, please refer to <a href="https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/utils/config.py">config.py</a>.</p>
+<h4 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>As the global batch size  (batch_size x num_devices) is an important hyper-parameter, it is recommended to keep the global batch size unchanged for reproduction or adjust the learning rate linearly to a new global batch size.</li>
+<li>If the following warning occurs, setting the environment variable PYTHONWARNINGS='ignore:semaphore_tracker:UserWarning' will fix it.
 <div class="highlight"><pre><span></span><code>multiprocessing/semaphore_tracker.py:<span class="w"> </span><span class="m">144</span><span class="w"> </span>UserWarning:<span class="w"> </span>semaphore_tracker:<span class="w"> </span>There<span class="w"> </span>appear<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span><span class="m">235</span><span class="w"> </span>leaked<span class="w"> </span>semaphores<span class="w"> </span>to<span class="w"> </span>clean<span class="w"> </span>up<span class="w"> </span>at<span class="w"> </span>shutdown<span class="w"> </span>len<span class="o">(</span>cache<span class="o">))</span>
-</code></pre></div>
-
-#### - Standalone Training
-
-If you want to train or finetune the model on a smaller dataset without distributed training, please run:
-
+</code></pre></div></li>
+</ul>
+<h4 id="-standalone-training">- Standalone Training<a class="headerlink" href="#-standalone-training" title="Permanent link">&para;</a></h4>
+<p>If you want to train or finetune the model on a smaller dataset without distributed training, please run:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># standalone training on a CPU/GPU/Ascend device</span>
 python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov4/yolov4-silu.yaml<span class="w"> </span>--device_target<span class="w"> </span>Ascend<span class="w"> </span>--epochs<span class="w"> </span><span class="m">320</span>
 </code></pre></div>
-
-</details>
-
 <h3 id="validation-and-test">Validation and Test<a class="headerlink" href="#validation-and-test" title="Permanent link">&para;</a></h3>
 <p>To validate the accuracy of the trained model, you can use <code>test.py</code> and parse the checkpoint path with <code>--weight</code>.</p>
 <div class="highlight"><pre><span></span><code>python test.py --config ./configs/yolov4/yolov4-silu.yaml --device_target Ascend --iou_thres 0.6 --weight /PATH/TO/WEIGHT.ckpt
 </code></pre></div>
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
-<p>See <a href="../../tutorials/quick_start/">here</a>.</p>
+<p>See <a href="../../tutorials/deployment/">here</a>.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <!--- Guideline: Citation format should follow GB/T 7714. -->
 <p>[1] Alexey Bochkovskiy, Chien-Yao Wang and Ali Farhadi. YOLOv4: Optimal Speed and Accuracy of Object Detection. arXiv preprint arXiv:2004.10934, 2020.</p>
