@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#data-augmentation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -644,10 +649,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Augmentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Augmentation
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-data-enhancement-methods-that-come-with-the-package" class="md-nav__link">
+    List of data enhancement methods that come with the package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-data-enhancement" class="md-nav__link">
+    Custom data enhancement
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -974,6 +1026,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-data-enhancement-methods-that-come-with-the-package" class="md-nav__link">
+    List of data enhancement methods that come with the package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-data-enhancement" class="md-nav__link">
+    Custom data enhancement
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1004,9 +1087,169 @@
   
 
 
-  <h1>Augmentation</h1>
-
-
+<h1 id="data-augmentation">Data Augmentation<a class="headerlink" href="#data-augmentation" title="Permanent link">&para;</a></h1>
+<h2 id="list-of-data-enhancement-methods-that-come-with-the-package">List of data enhancement methods that come with the package<a class="headerlink" href="#list-of-data-enhancement-methods-that-come-with-the-package" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Data Enhancement Method Name</th>
+<th>Summary Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mosaic</td>
+<td>randomly select mosaic4 and mosaic9</td>
+</tr>
+<tr>
+<td>mosaic4</td>
+<td>4-part splicing</td>
+</tr>
+<tr>
+<td>mosaic9</td>
+<td>9-point splicing</td>
+</tr>
+<tr>
+<td>mixup</td>
+<td>linearly mix two images</td>
+</tr>
+<tr>
+<td>pastein</td>
+<td>clipping enhancement</td>
+</tr>
+<tr>
+<td>random_perspective</td>
+<td>random perspective transformation</td>
+</tr>
+<tr>
+<td>hsv_augment</td>
+<td>random color transformation</td>
+</tr>
+<tr>
+<td>fliplr</td>
+<td>flip horizontally</td>
+</tr>
+<tr>
+<td>flipud</td>
+<td>vertical flip</td>
+</tr>
+<tr>
+<td>letterbox</td>
+<td>scale and fill</td>
+</tr>
+<tr>
+<td>label_norm</td>
+<td>label normalization and coordinates normalized to 0-1 to range</td>
+</tr>
+<tr>
+<td>label_pad</td>
+<td>fill label information into a fixed-size array</td>
+</tr>
+<tr>
+<td>image_norm</td>
+<td>image data normalization</td>
+</tr>
+<tr>
+<td>image_transpose</td>
+<td>channel transpose and dimension transpose</td>
+</tr>
+<tr>
+<td>albumentations</td>
+<td>albumentations data enhancement</td>
+</tr>
+</tbody>
+</table>
+<p>These data augmentation functions are defined in <a href="https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/data/dataset.py">mindyolo/data/dataset.py</a>.</p>
+<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">&para;</a></h2>
+<p>The MindYOLO data enhancement method is configured in the yaml file. For example, to add a data enhancement during the training process, you need to add a dictionary list under the data.train_transforms field of the yaml file. The data enhancement methods are listed from top to bottom.</p>
+<p>A typical data enhancement method configuration dictionary must have func_name, which represents the name of the applied data enhancement method, and then lists the parameters that need to be set for the method. If no parameter item is configured in the data enhancement configuration dictionary, the data enhancement method will be selected by default. value.</p>
+<p>Data enhancement common configuration dictionary:
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">data enhancement method name 1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args11=x11</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args12=x12</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">...</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args1n=x1n</span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">data enhancement method name 2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args21=x21</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args22=x22</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">...</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">args2n=x2n</span><span class="p p-Indicator">}</span>
+<span class="nn">...</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">data enhancement method name n</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">argsn1=xn1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">argsn2=xn2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">...</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">argsnn=xnn</span><span class="p p-Indicator">}</span>
+</code></pre></div></p>
+<p>Example enhanced with YOLOv7 training data:
+<div class="highlight"><pre><span></span><code><span class="c1">#File directory: configs/yolov7/hyp.scratch.tiny.yaml (https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov7/hyp.scratch.tiny.yaml)</span>
+<span class="w">  </span><span class="nt">train_transforms</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">mosaic</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="nt"> mosaic9_prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> translate</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">,</span><span class="nt"> scale</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">mixup</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.05</span><span class="p p-Indicator">,</span><span class="nt"> alpha</span><span class="p">:</span><span class="w"> </span><span class="nv">8.0</span><span class="p p-Indicator">,</span><span class="nt"> beta</span><span class="p">:</span><span class="w"> </span><span class="nv">8.0</span><span class="p p-Indicator">,</span><span class="nt"> needed_mosaic</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">hsv_augment</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="nt"> hgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.015</span><span class="p p-Indicator">,</span><span class="nt"> sgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.7</span><span class="p p-Indicator">,</span><span class="nt"> vgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.4</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">pastein</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.05</span><span class="p p-Indicator">,</span><span class="nt"> num_sample</span><span class="p">:</span><span class="w"> </span><span class="nv">30</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_norm</span><span class="p p-Indicator">,</span><span class="nt"> xyxy2xywh_</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">fliplr</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_pad</span><span class="p p-Indicator">,</span><span class="nt"> padding_size</span><span class="p">:</span><span class="w"> </span><span class="nv">160</span><span class="p p-Indicator">,</span><span class="nt"> padding_value</span><span class="p">:</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_norm</span><span class="p p-Indicator">,</span><span class="nt"> scale</span><span class="p">:</span><span class="w"> </span><span class="nv">255.</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_transpose</span><span class="p p-Indicator">,</span><span class="nt"> bgr2rgb</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">,</span><span class="nt"> hwc2chw</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<em>Note: func_name represents the name of the data enhancement method, prob, mosaic9_prob, translate, and scale are the method parameters. Among them, prob is a parameter common to all methods, indicating the execution probability of the data enhancement method. The default value is 1</em></p>
+<p>The specific operations performed by the above yaml file are as follows:</p>
+<ul>
+<li>
+<p><code>mosaic</code>: Perform mosaic operation on the input image with a probability of 1.0, that is, splicing 4 different images into one image. mosaic9_prob represents the probability of splicing using the 9-square grid method, and translate and scale represent the degree of random translation and scaling respectively.
+as the picture shows:
+<img width='600' src="https://github.com/chenyang23333/images/raw/main/mosaic.png"/></p>
+</li>
+<li>
+<p><code>mixup</code>: Perform a mixup operation on the input image with a probability of 0.05, that is, mix two different images. Among them, alpha and beta represent the mixing coefficient, and needed_mosaic represents whether mosaic needs to be used for mixing.</p>
+</li>
+<li>
+<p><code>hsv_augment</code>: HSV enhancement, adjust the HSV color space of the input image with a probability of 1.0 to increase data diversity. Among them, hgain, sgain and vgain represent the degree of adjustment of H, S and V channels respectively.</p>
+</li>
+<li>
+<p><code>pastein</code>: randomly paste some samples into the input image with a probability of 0.05. Among them, num_sample represents the number of randomly posted samples.</p>
+</li>
+<li>
+<p><code>label_norm</code>: Convert the input label from the format of (x1, y1, x2, y2) to the format of (x, y, w, h).</p>
+</li>
+<li>
+<p><code>fliplr</code>: Flip the input image horizontally with a probability of 0.5 to increase data diversity.</p>
+</li>
+<li>
+<p><code>label_pad</code>: Pad the input labels so that each image has the same number of labels. padding_size represents the number of labels after padding, and padding_value represents the value of padding.</p>
+</li>
+<li>
+<p><code>image_norm</code>: Scale the input image pixel value from the range [0, 255] to the range [0, 1].</p>
+</li>
+<li>
+<p><code>image_transpose</code>: Convert the input image from BGR format to RGB format, and convert the number of channels of the image from HWC format to CHW format.</p>
+</li>
+</ul>
+<p>Test data enhancement needs to be marked with the test_transforms field, and the configuration method is the same as training.</p>
+<h2 id="custom-data-enhancement">Custom data enhancement<a class="headerlink" href="#custom-data-enhancement" title="Permanent link">&para;</a></h2>
+<p>Writing Guide:</p>
+<ul>
+<li>Add custom data enhancement methods to the COCODataset class in the <a href="https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/data/dataset.py">mindyolo/data/dataset.py</a> file</li>
+<li>Inputs to data augmentation methods usually include images, labels, and custom parameters.<br />
+-Write function body content and customize output</li>
+</ul>
+<p>A typical data enhancement method:
+<div class="highlight"><pre><span></span><code><span class="c1">#Add submethods in mindyolo/data/dataset.py COCODataset</span>
+<span class="k">def</span> <span class="nf">data_trans_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">args1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">args2</span><span class="o">=</span><span class="n">x2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argsn</span><span class="o">=</span><span class="n">xn</span><span class="p">):</span>
+    <span class="c1"># Data enhancement logic</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">labels</span>
+</code></pre></div>
+Customize a data enhancement function whose function is rotation
+<div class="highlight"><pre><span></span><code><span class="c1">#mindyolo/data/dataset.py</span>
+<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="c1"># rotate image</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">angle</span> <span class="o">//</span> <span class="mi">90</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">angle</span> <span class="o">==</span> <span class="mi">90</span><span class="p">:</span>
+            <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">angle</span> <span class="o">==</span> <span class="mi">180</span><span class="p">:</span>
+            <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">angle</span> <span class="o">==</span> <span class="mi">270</span><span class="p">:</span>
+            <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">labels</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">labels</span>
+</code></pre></div></p>
+<p>user's guidance:
+- Define this data augmentation method in the form of a dictionary in the model's yaml file. Same usage as described above
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">rotate</span><span class="p p-Indicator">,</span><span class="nt"> angle</span><span class="p">:</span><span class="w"> </span><span class="nv">90</span><span class="p p-Indicator">}</span>
+</code></pre></div></p>
+<p>Show results:</p>
+<p>&nbsp; &nbsp; &nbsp; <img width='600' src="https://github.com/chenyang23333/images/raw/main/rotate.png"/></p>
 
 
 
