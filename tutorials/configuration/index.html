@@ -1459,26 +1459,27 @@
 </ul>
 <h3 id="yaml-file-sample_1">yaml file sample<a class="headerlink" href="#yaml-file-sample_1" title="Permanent link">&para;</a></h3>
 <p>This part of the parameters is defined in <a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>, where train_transformers and test_transformers are lists composed of dictionaries, each dictionary contains data enhancement operations name, probability of occurrence and parameters related to the enhancement method</p>
-<p>```yaml
-data:
-  num_parallel_workers: 4</p>
-<p>train_transforms:
-    - { func_name: mosaic, prob: 1.0, mosaic9_prob: 0.0, translate: 0.1, scale: 0.9 }
-    - { func_name: mixup, prob: 0.1, alpha: 8.0, beta: 8.0, needed_mosaic: True }
-    - { func_name: hsv_augment, prob: 1.0, hgain: 0.015, sgain: 0.7, vgain: 0.4 }
-    - { func_name: label_norm, xyxy2xywh_: True }
-    - { func_name: albumentations }
-    - { func_name: fliplr, prob: 0.5 }
-    - { func_name: label_pad, padding_size: 160, padding_value: -1 }
-    - { func_name: image_norm, scale: 255. }
-    - { func_name: image_transpose, bgr2rgb: True, hwc2chw: True }</p>
-<p>test_transforms:
-    - { func_name: letterbox, scaleup: False }
-    - { func_name: label_norm, xyxy2xywh_: True }
-    - { func_name: label_pad, padding_size: 160, padding_value: -1 }
-    - { func_name: image_norm, scale: 255. }
-    - { func_name: image_transpose, bgr2rgb: True, hwc2chw: True }
-  ```</p>
+<div class="highlight"><pre><span></span><code><span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">num_parallel_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+
+<span class="w">  </span><span class="nt">train_transforms</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">mosaic</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="nt"> mosaic9_prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> translate</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">,</span><span class="nt"> scale</span><span class="p">:</span><span class="w"> </span><span class="nv">0.9</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">mixup</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">,</span><span class="nt"> alpha</span><span class="p">:</span><span class="w"> </span><span class="nv">8.0</span><span class="p p-Indicator">,</span><span class="nt"> beta</span><span class="p">:</span><span class="w"> </span><span class="nv">8.0</span><span class="p p-Indicator">,</span><span class="nt"> needed_mosaic</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">hsv_augment</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="nt"> hgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.015</span><span class="p p-Indicator">,</span><span class="nt"> sgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.7</span><span class="p p-Indicator">,</span><span class="nt"> vgain</span><span class="p">:</span><span class="w"> </span><span class="nv">0.4</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_norm</span><span class="p p-Indicator">,</span><span class="nt"> xyxy2xywh_</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">albumentations</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">fliplr</span><span class="p p-Indicator">,</span><span class="nt"> prob</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_pad</span><span class="p p-Indicator">,</span><span class="nt"> padding_size</span><span class="p">:</span><span class="w"> </span><span class="nv">160</span><span class="p p-Indicator">,</span><span class="nt"> padding_value</span><span class="p">:</span><span class="w"> </span><span class="nv">-1</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_norm</span><span class="p p-Indicator">,</span><span class="nt"> scale</span><span class="p">:</span><span class="w"> </span><span class="nv">255.</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_transpose</span><span class="p p-Indicator">,</span><span class="nt"> bgr2rgb</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">,</span><span class="nt"> hwc2chw</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="w"> </span><span class="p p-Indicator">}</span>
+
+<span class="w">  </span><span class="nt">test_transforms</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">letterbox</span><span class="p p-Indicator">,</span><span class="nt"> scaleup</span><span class="p">:</span><span class="w"> </span><span class="nv">False</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_norm</span><span class="p p-Indicator">,</span><span class="nt"> xyxy2xywh_</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">label_pad</span><span class="p p-Indicator">,</span><span class="nt"> padding_size</span><span class="p">:</span><span class="w"> </span><span class="nv">160</span><span class="p p-Indicator">,</span><span class="nt"> padding_value</span><span class="p">:</span><span class="w"> </span><span class="nv">-1</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_norm</span><span class="p p-Indicator">,</span><span class="nt"> scale</span><span class="p">:</span><span class="w"> </span><span class="nv">255.</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> func_name</span><span class="p">:</span><span class="w"> </span><span class="nv">image_transpose</span><span class="p p-Indicator">,</span><span class="nt"> bgr2rgb</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="p p-Indicator">,</span><span class="nt"> hwc2chw</span><span class="p">:</span><span class="w"> </span><span class="nv">True</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
 <h2 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h2>
 <h3 id="parameter-description_3">Parameter Description<a class="headerlink" href="#parameter-description_3" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1492,56 +1493,58 @@ data:
 </ul>
 <h3 id="yaml-file-sample_2">yaml file sample<a class="headerlink" href="#yaml-file-sample_2" title="Permanent link">&para;</a></h3>
 <p>This part of the parameters is defined in <a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/yolov3.yaml">configs/yolov3/yolov3.yaml</a>. The network is constructed based on the backbone and head parameters. The parameters are presented in the form of a nested list, with each line representing a The layer module contains 4 parameters, namely the input layer number (-1 represents the previous layer), the number of module repetitions, the module name and the corresponding parameters of the module. Users can also define and register networks directly in py files without resorting to yaml files.
-```yaml
-network:
-  model_name: yolov3</p>
-<p>depth_multiple: 1.0  # model depth multiple
-  width_multiple: 1.0  # layer channel multiple
-  stride: [8, 16, 32]
-  anchors:
-    - [10,13, 16,30, 33,23]  # P&#8540;
-    - [30,61, 62,45, 59,119]  # P4/16
-    - [116,90, 156,198, 373,326]  # P5/32</p>
-<p># darknet53 backbone
-  backbone:
-    # [from, number, module, args]
-    [[-1, 1, ConvNormAct, [32, 3, 1]],  # 0
-     [-1, 1, ConvNormAct, [64, 3, 2]],  # 1-P&frac12;
-     [-1, 1, Bottleneck, [64]],
-     [-1, 1, ConvNormAct, [128, 3, 2]],  # 3-P2/4
-     [-1, 2, Bottleneck, [128]],
-     [-1, 1, ConvNormAct, [256, 3, 2]],  # 5-P&#8540;
-     [-1, 8, Bottleneck, [256]],
-     [-1, 1, ConvNormAct, [512, 3, 2]],  # 7-P4/16
-     [-1, 8, Bottleneck, [512]],
-     [-1, 1, ConvNormAct, [1024, 3, 2]],  # 9-P5/32
-     [-1, 4, Bottleneck, [1024]],  # 10
-    ]</p>
-<p># YOLOv3 head
-  head:
-    [[-1, 1, Bottleneck, [1024, False]],
-     [-1, 1, ConvNormAct, [512, 1, 1]],
-     [-1, 1, ConvNormAct, [1024, 3, 1]],
-     [-1, 1, ConvNormAct, [512, 1, 1]],
-     [-1, 1, ConvNormAct, [1024, 3, 1]],  # 15 (P5/32-large)</p>
-<div class="highlight"><pre><span></span><code> [-2, 1, ConvNormAct, [256, 1, 1]],
- [-1, 1, Upsample, [None, 2, &#39;nearest&#39;]],
- [[-1, 8], 1, Concat, [1]],  # cat backbone P4
- [-1, 1, Bottleneck, [512, False]],
- [-1, 1, Bottleneck, [512, False]],
- [-1, 1, ConvNormAct, [256, 1, 1]],
- [-1, 1, ConvNormAct, [512, 3, 1]],  # 22 (P4/16-medium)
+<div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yolov3</span>
 
- [-2, 1, ConvNormAct, [128, 1, 1]],
- [-1, 1, Upsample, [None, 2, &#39;nearest&#39;]],
- [[-1, 6], 1, Concat, [1]],  # cat backbone P3
- [-1, 1, Bottleneck, [256, False]],
- [-1, 2, Bottleneck, [256, False]],  # 27 (P3/8-small)
+<span class="w">  </span><span class="nt">depth_multiple</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">  </span><span class="c1"># model depth multiple</span>
+<span class="w">  </span><span class="nt">width_multiple</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">  </span><span class="c1"># layer channel multiple</span>
+<span class="w">  </span><span class="nt">stride</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">16</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">32</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">anchors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">10</span><span class="p p-Indicator">,</span><span class="nv">13</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">16</span><span class="p p-Indicator">,</span><span class="nv">30</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">33</span><span class="p p-Indicator">,</span><span class="nv">23</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># P3/8</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">30</span><span class="p p-Indicator">,</span><span class="nv">61</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">62</span><span class="p p-Indicator">,</span><span class="nv">45</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">59</span><span class="p p-Indicator">,</span><span class="nv">119</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># P4/16</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">116</span><span class="p p-Indicator">,</span><span class="nv">90</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">156</span><span class="p p-Indicator">,</span><span class="nv">198</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">373</span><span class="p p-Indicator">,</span><span class="nv">326</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># P5/32</span>
 
- [[27, 22, 15], 1, YOLOv3Head, [nc, anchors, stride]],   # Detect(P3, P4, P5)
-]
-</code></pre></div>
-<p>```</p>
+<span class="w">  </span><span class="c1"># darknet53 backbone</span>
+<span class="w">  </span><span class="nt">backbone</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># [from, number, module, args]</span>
+<span class="w">    </span><span class="p p-Indicator">[[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">32</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 0</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">64</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 1-P1/2</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">64</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">128</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 3-P2/4</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">128</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 5-P3/8</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 7-P4/16</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1024</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 9-P5/32</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1024</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 10</span>
+<span class="w">    </span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="c1"># YOLOv3 head</span>
+<span class="w">  </span><span class="nt">head</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">[[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1024</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">False</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1024</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1024</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 15 (P5/32-large)</span>
+
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Upsample</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">None</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;nearest&#39;</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Concat</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># cat backbone P4</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">False</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">False</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 22 (P4/16-medium)</span>
+
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">128</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Upsample</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">None</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;nearest&#39;</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Concat</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># cat backbone P3</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">False</span><span class="p p-Indicator">]],</span>
+<span class="w">     </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">False</span><span class="p p-Indicator">]],</span><span class="w">  </span><span class="c1"># 27 (P3/8-small)</span>
+
+<span class="w">     </span><span class="p p-Indicator">[[</span><span class="nv">27</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">22</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">15</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">YOLOv3Head</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">nc</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">anchors</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">stride</span><span class="p p-Indicator">]],</span><span class="w">   </span><span class="c1"># Detect(P3, P4, P5)</span>
+<span class="w">    </span><span class="p p-Indicator">]</span>
+</code></pre></div></p>
 <h2 id="loss-function">Loss function<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h2>
 <h3 id="parameter-description_4">Parameter Description<a class="headerlink" href="#parameter-description_4" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1557,17 +1560,17 @@ network:
 </ul>
 <h3 id="yaml-file-sample_3">yaml file sample<a class="headerlink" href="#yaml-file-sample_3" title="Permanent link">&para;</a></h3>
 <p>This part of the parameters is defined in <a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a></p>
-<p><code>yaml
-loss:
-  name: YOLOv7Loss
-  box: 0.05  # box loss gain
-  cls: 0.5  # cls loss gain
-  cls_pw: 1.0  # cls BCELoss positive_weight
-  obj: 1.0  # obj loss gain (scale with pixels)
-  obj_pw: 1.0  # obj BCELoss positive_weight
-  fl_gamma: 0.0  # focal loss gamma (efficientDet default gamma=1.5)
-  anchor_t: 4.0  # anchor-multiple threshold
-  label_smoothing: 0.0 # label smoothing epsilon</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">loss</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOLOv7Loss</span>
+<span class="w">  </span><span class="nt">box</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span><span class="w">  </span><span class="c1"># box loss gain</span>
+<span class="w">  </span><span class="nt">cls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w">  </span><span class="c1"># cls loss gain</span>
+<span class="w">  </span><span class="nt">cls_pw</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">  </span><span class="c1"># cls BCELoss positive_weight</span>
+<span class="w">  </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">  </span><span class="c1"># obj loss gain (scale with pixels)</span>
+<span class="w">  </span><span class="nt">obj_pw</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">  </span><span class="c1"># obj BCELoss positive_weight</span>
+<span class="w">  </span><span class="nt">fl_gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># focal loss gamma (efficientDet default gamma=1.5)</span>
+<span class="w">  </span><span class="nt">anchor_t</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span><span class="w">  </span><span class="c1"># anchor-multiple threshold</span>
+<span class="w">  </span><span class="nt">label_smoothing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"> </span><span class="c1"># label smoothing epsilon</span>
+</code></pre></div>
 <h2 id="optimizer">Optimizer<a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h2>
 <h3 id="parameter-description_5">Parameter Description<a class="headerlink" href="#parameter-description_5" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1587,21 +1590,21 @@ loss:
 </ul>
 <h3 id="yaml-file-sample_4">yaml file sample<a class="headerlink" href="#yaml-file-sample_4" title="Permanent link">&para;</a></h3>
 <p>This part of the parameters is defined in <a href="../configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>. In the following example, the initial learning rate after the warmup stage is lr_init * start_factor = 0.01 * 1.0 = 0.01, the final learning rate is lr_init * end_factor = 0.01 * 0.01 = 0.0001</p>
-<p><code>yaml
-optimizer:
-  optimizer: momentum
-  lr_init: 0.01  # initial learning rate (SGD=1E-2, Adam=1E-3)
-  momentum: 0.937  # SGD momentum/Adam beta1
-  nesterov: True # update gradients with NAG(Nesterov Accelerated Gradient) algorithm
-  loss_scale: 1.0 # loss scale for optimizer
-  warmup_epochs: 3  # warmup epochs (fractions ok)
-  warmup_momentum: 0.8  # warmup initial momentum
-  warmup_bias_lr: 0.1  # warmup initial bias lr
-  min_warmup_step: 1000 # minimum warmup step
-  group_param: yolov7 # group param strategy
-  gp_weight_decay: 0.0005  # group param weight decay 5e-4
-  start_factor: 1.0
-  end_factor: 0.01</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">optimizer</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">optimizer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">momentum</span>
+<span class="w">  </span><span class="nt">lr_init</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w">  </span><span class="c1"># initial learning rate (SGD=1E-2, Adam=1E-3)</span>
+<span class="w">  </span><span class="nt">momentum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.937</span><span class="w">  </span><span class="c1"># SGD momentum/Adam beta1</span>
+<span class="w">  </span><span class="nt">nesterov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># update gradients with NAG(Nesterov Accelerated Gradient) algorithm</span>
+<span class="w">  </span><span class="nt">loss_scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"> </span><span class="c1"># loss scale for optimizer</span>
+<span class="w">  </span><span class="nt">warmup_epochs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">  </span><span class="c1"># warmup epochs (fractions ok)</span>
+<span class="w">  </span><span class="nt">warmup_momentum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w">  </span><span class="c1"># warmup initial momentum</span>
+<span class="w">  </span><span class="nt">warmup_bias_lr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w">  </span><span class="c1"># warmup initial bias lr</span>
+<span class="w">  </span><span class="nt">min_warmup_step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w"> </span><span class="c1"># minimum warmup step</span>
+<span class="w">  </span><span class="nt">group_param</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yolov7</span><span class="w"> </span><span class="c1"># group param strategy</span>
+<span class="w">  </span><span class="nt">gp_weight_decay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0005</span><span class="w">  </span><span class="c1"># group param weight decay 5e-4</span>
+<span class="w">  </span><span class="nt">start_factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">  </span><span class="nt">end_factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+</code></pre></div>
 
 
 
