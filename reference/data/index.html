@@ -14,7 +14,7 @@
         <link rel="prev" href="../../how_to_guides/callback/">
       
       
-        <link rel="next" href="../../notes/changelog/">
+        <link rel="next" href="../models/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.20">
@@ -933,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models.md" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         models
       </a>
     </li>
@@ -3994,6 +3994,151 @@ that apply data enhancements on data set objects in order.</p>
 
     </div>
 
+</div><h1 id="albumentations">Albumentations<a class="headerlink" href="#albumentations" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="mindyolo.data.albumentations.Albumentations" class="doc doc-heading">
+            <code>mindyolo.data.albumentations.Albumentations</code>
+
+
+<a href="#mindyolo.data.albumentations.Albumentations" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+
+              <details class="quote">
+                <summary>Source code in <code>mindyolo\data\albumentations.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Albumentations</span><span class="p">:</span>
+    <span class="c1"># Implement Albumentations augmentation https://github.com/ultralytics/yolov5</span>
+    <span class="c1"># YOLOv5 Albumentations class (optional, only used if package is installed)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">random_resized_crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">_colorstr</span><span class="p">(</span><span class="s2">&quot;albumentations: &quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">albumentations</span> <span class="k">as</span> <span class="nn">A</span>
+
+            <span class="n">_check_version</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">&quot;1.0.3&quot;</span><span class="p">,</span> <span class="n">hard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># version requirement</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="n">random_resized_crop</span><span class="p">:</span>
+                <span class="n">T</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                    <span class="n">A</span><span class="o">.</span><span class="n">RandomResizedCrop</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">ratio</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.11</span><span class="p">),</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+                <span class="p">])</span>
+            <span class="n">T</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">Blur</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">MedianBlur</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">ToGray</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">CLAHE</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">RandomBrightnessContrast</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">RandomGamma</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+                <span class="n">A</span><span class="o">.</span><span class="n">ImageCompression</span><span class="p">(</span><span class="n">quality_lower</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+            <span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">bbox_params</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">BboxParams</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;yolo&quot;</span><span class="p">,</span> <span class="n">label_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;class_labels&quot;</span><span class="p">]))</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;always_apply=False, &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">T</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">p</span><span class="p">),</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[INFO] albumentations load success&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># package not installed, skip</span>
+            <span class="k">pass</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[WARNING] package not installed, albumentations load failed&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[WARNING] albumentations load failed&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">and</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+            <span class="n">im</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">bbox_format</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;img&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;bboxes&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;bbox_format&#39;</span><span class="p">]</span>
+            <span class="k">assert</span> <span class="n">bbox_format</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ltrb&quot;</span><span class="p">,</span> <span class="s2">&quot;xywhn&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">bbox_format</span> <span class="o">==</span> <span class="s2">&quot;ltrb&quot;</span> <span class="ow">and</span> <span class="n">bboxes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+                <span class="n">bboxes</span> <span class="o">=</span> <span class="n">xyxy2xywh</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)</span>
+                <span class="n">bboxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">/=</span> <span class="n">w</span>
+                <span class="n">bboxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">/=</span> <span class="n">h</span>
+
+            <span class="n">new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im</span><span class="p">,</span> <span class="n">bboxes</span><span class="o">=</span><span class="n">bboxes</span><span class="p">,</span> <span class="n">class_labels</span><span class="o">=</span><span class="bp">cls</span><span class="p">)</span>  <span class="c1"># transformed</span>
+
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;img&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;bboxes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new</span><span class="p">[</span><span class="s1">&#39;bboxes&#39;</span><span class="p">])</span>
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new</span><span class="p">[</span><span class="s1">&#39;class_labels&#39;</span><span class="p">])</span>
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;bbox_format&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;xywhn&quot;</span>
+
+        <span class="k">return</span> <span class="n">sample</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
 </div>
 
 
@@ -4039,13 +4184,13 @@ that apply data enhancements on data set objects in order.</p>
         
         
           
-          <a href="../../notes/changelog/" class="md-footer__link md-footer__link--next" aria-label="Next: Change Log" rel="next">
+          <a href="../models/" class="md-footer__link md-footer__link--next" aria-label="Next: models" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Change Log
+                models
               </div>
             </div>
             <div class="md-footer__button md-icon">
