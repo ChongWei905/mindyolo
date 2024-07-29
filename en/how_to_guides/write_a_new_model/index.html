@@ -14,7 +14,7 @@
         <link rel="prev" href="../data_preparation/">
       
       
-        <link rel="next" href="../../reference/data/">
+        <link rel="next" href="../callback/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.20">
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#write-a-new-model" class="md-skip">
+        <a href="#model-writing-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -765,9 +765,121 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Write A New Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Write A New Model
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-definition" class="md-nav__link">
+    Model definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Model definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-python-code-directly-to-write-the-network" class="md-nav__link">
+    1. Use python code directly to write the network
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Use python code directly to write the network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-import" class="md-nav__link">
+    Module import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model" class="md-nav__link">
+    Create a model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model-instance" class="md-nav__link">
+    Create a model instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-yaml-file-to-write-network" class="md-nav__link">
+    2. Use yaml file to write network
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Use yaml file to write network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-import_1" class="md-nav__link">
+    Module import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-configuration-dictionary" class="md-nav__link">
+    Create a configuration dictionary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model_1" class="md-nav__link">
+    Create a model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-main" class="md-nav__link">
+    Verify main
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -780,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how_to_guides/callback.md" class="md-nav__link">
+      <a href="../callback/" class="md-nav__link">
         Callback
       </a>
     </li>
@@ -984,6 +1096,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-definition" class="md-nav__link">
+    Model definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Model definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-python-code-directly-to-write-the-network" class="md-nav__link">
+    1. Use python code directly to write the network
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Use python code directly to write the network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-import" class="md-nav__link">
+    Module import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model" class="md-nav__link">
+    Create a model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model-instance" class="md-nav__link">
+    Create a model instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-yaml-file-to-write-network" class="md-nav__link">
+    2. Use yaml file to write network
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Use yaml file to write network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-import_1" class="md-nav__link">
+    Module import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-configuration-dictionary" class="md-nav__link">
+    Create a configuration dictionary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-model_1" class="md-nav__link">
+    Create a model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-main" class="md-nav__link">
+    Verify main
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1013,8 +1221,180 @@
   
 
 
-<h1 id="write-a-new-model">Write A New Model<a class="headerlink" href="#write-a-new-model" title="Permanent link">&para;</a></h1>
-<p>comming soon.</p>
+<h1 id="model-writing-guide">Model Writing Guide<a class="headerlink" href="#model-writing-guide" title="Permanent link">&para;</a></h1>
+<p>This document provides a tutorial for writing custom models for MindYOLO. <br>
+It is divided into three parts:
+- Model definition: We can define a network directly or use a yaml file to define a network.
+- Register model: Optional. After registration, you can use the file name in the create_model interface to create a custom model
+- Verification: Verify whether the model is operational</p>
+<h2 id="model-definition">Model definition<a class="headerlink" href="#model-definition" title="Permanent link">&para;</a></h2>
+<h3 id="1-use-python-code-directly-to-write-the-network">1. Use python code directly to write the network<a class="headerlink" href="#1-use-python-code-directly-to-write-the-network" title="Permanent link">&para;</a></h3>
+<h4 id="module-import">Module import<a class="headerlink" href="#module-import" title="Permanent link">&para;</a></h4>
+<p>Import the nn module and ops module in the MindSpore framework to define the components and operations of the neural network.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindspore.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">mindspore.ops.operations</span> <span class="k">as</span> <span class="nn">ops</span>
+</code></pre></div></p>
+<h4 id="create-a-model">Create a model<a class="headerlink" href="#create-a-model" title="Permanent link">&para;</a></h4>
+<p>Define a model class MyModel that inherits from nn.Cell. In the constructor <strong>init</strong>, define the various components of the model:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Cell</span><span class="p">):</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nb">super</span><span class="p">(</span><span class="n">MyModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="c1">#conv1 is a 2D convolution layer with 3 input channels, 16 output channels, 3x3 kernel size, 1 stride, and 1 padding.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#relu is a ReLU activation function operation.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+<span class="c1">#axpool is a 2D max pooling layer with a pooling window size of 2x2 and a stride of 2.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">maxpool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#conv2 is another 2D convolution layer with 16 input channels, 32 output channels, 3x3 kernel size, 1 stride, and 1 padding.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#fc is a fully connected layer with 32x8x8 input feature dimensions and 10 output feature dimensions.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">#In the construct method, the forward propagation process of the model is defined. After the input x is subjected to convolution, activation function, pooling and other operations, the feature tensor is converted into a one-dimensional vector through flattening, and then the final output result is obtained through the fully connected layer.</span>
+<span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxpool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxpool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">x</span>
+</code></pre></div>
+<h4 id="create-a-model-instance">Create a model instance<a class="headerlink" href="#create-a-model-instance" title="Permanent link">&para;</a></h4>
+<p>By instantiating the MyModel class, create a model instance model, which can be used for model training and reasoning later.
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
+</code></pre></div></p>
+<h3 id="2-use-yaml-file-to-write-network">2. Use yaml file to write network<a class="headerlink" href="#2-use-yaml-file-to-write-network" title="Permanent link">&para;</a></h3>
+<p>Usually need the following three steps
+- Create a new mymodel.yaml file
+- Create a corresponding mymodel.py file
+- Introduce the model in the mindyolo/models/<em>init</em>.py file</p>
+<p>Here is a detailed guide to writing mymodel.yaml file:<br>
+Take writing a simple network as an example:
+Write the necessary parameters in yaml format, and then use these parameters in the mymodel.py file.
+The network part is the model network <br>
+[[from, number, module, args], ...]: Each element represents the configuration of a network layer. <br>
+<div class="highlight"><pre><span></span><code><span class="c1"># The yaml in __BASE__ indicates the base configuration file for inheritance. Repeated parameters will be overwritten by the current file;</span>
+<span class="nt">__BASE__</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">-&#39;../coco.yaml&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">-&#39;./hyp.scratch-high.yaml&#39;</span>
+
+<span class="nt">per_batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span>
+<span class="nt">img_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">640</span>
+<span class="nt">sync_bn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+
+<span class="nt">network</span><span class="p">:</span>
+<span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodel</span>
+<span class="nt">depth_multiple</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"> </span><span class="c1"># model depth multiple</span>
+<span class="nt">width_multiple</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w"> </span><span class="c1"># layer channel multiple</span>
+<span class="nt">stride</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">16</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">32</span><span class="w"> </span><span class="p p-Indicator">]</span>
+
+<span class="c1"># Configuration of the backbone network. The meaning of each layer is</span>
+<span class="c1"># [from, number, module, args]</span>
+<span class="c1"># Take the first layer as an example, [-1, 1, ConvNormAct, [32, 3, 1]], which means the input comes from `-1` (the previous layer), the number of repetitions is 1, and the module name is ConvNormAct, module input parameters are [32, 3, 1];</span>
+<span class="nt">backbone</span><span class="p">:</span>
+<span class="p p-Indicator">[[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">32</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]],</span><span class="w"> </span><span class="c1"># 0</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">64</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w"> </span><span class="c1"># 1-P1/2</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">64</span><span class="p p-Indicator">]],</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">128</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w"> </span><span class="c1"># 3-P2/4</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">128</span><span class="p p-Indicator">]],</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]],</span><span class="w"> </span><span class="c1"># 5-P3/8</span>
+<span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">256</span><span class="p p-Indicator">]],</span>
+<span class="p p-Indicator">]</span>
+
+<span class="c1">#head part configuration</span>
+<span class="nt">head</span><span class="p">:</span>
+<span class="p p-Indicator">[</span>
+<span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">512</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">],</span><span class="w"> </span><span class="c1"># 7-P4/16</span>
+<span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">512</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">],</span>
+<span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ConvNormAct</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">1024</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">],</span><span class="w"> </span><span class="c1"># 9-P5/32</span>
+<span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Bottleneck</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">1024</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">],</span><span class="w"> </span><span class="c1"># 10</span>
+<span class="p p-Indicator">]</span>
+</code></pre></div></p>
+<p>Write mymodel.py file:</p>
+<h4 id="module-import_1">Module import<a class="headerlink" href="#module-import_1" title="Permanent link">&para;</a></h4>
+<p>It is necessary to import modules in the package. For example, <code>from .registry import register_model</code>, etc.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">mindspore</span> <span class="k">as</span> <span class="nn">ms</span>
+<span class="kn">from</span> <span class="nn">mindspore</span> <span class="kn">import</span> <span class="n">Tensor</span><span class="p">,</span> <span class="n">nn</span>
+
+<span class="kn">from</span> <span class="nn">.initializer</span> <span class="kn">import</span> <span class="n">initialize_defult</span> <span class="c1">#Used to initialize the default parameters of the model, including weight initialization method, BN layer parameters, etc.</span>
+<span class="kn">from</span> <span class="nn">.model_factory</span> <span class="kn">import</span> <span class="n">build_model_from_cfg</span> <span class="c1">#Used to build a target detection model according to the parameters in the YAML configuration file and return an instance of the model.</span>
+<span class="kn">from</span> <span class="nn">.registry</span> <span class="kn">import</span> <span class="n">register_model</span> <span class="c1">#Used to register a custom model in Mindyolo for use in the YAML configuration file.</span>
+
+<span class="c1">#Visibility declaration</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MYmodel&quot;</span><span class="p">,</span> <span class="s2">&quot;mymodel&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="create-a-configuration-dictionary">Create a configuration dictionary<a class="headerlink" href="#create-a-configuration-dictionary" title="Permanent link">&para;</a></h4>
+<p>The _cfg function is an auxiliary function used to create a configuration dictionary. It accepts a url parameter and other keyword parameters and returns a dictionary containing the url and other parameters. <br>
+default_cfgs is a dictionary used to store default configurations. Here, mymodel is used as the key to create a configuration dictionary using the _cfg function.
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_cfg</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">return</span> <span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}</span>
+
+<span class="n">default_cfgs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mymodel&quot;</span><span class="p">:</span> <span class="n">_cfg</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)}</span>
+</code></pre></div></p>
+<h4 id="create-a-model_1">Create a model<a class="headerlink" href="#create-a-model_1" title="Permanent link">&para;</a></h4>
+<p>In <code>MindSpore</code>, the model class inherits from <code>nn.Cell</code>. Generally, the following two functions need to be overloaded:</p>
+<ul>
+<li>In the <code>__init__</code> function, the module layer needed in the model should be defined.</li>
+<li>In the <code>construct</code> function, define the model forward logic. <br> ```python class MYmodel(nn.Cell): def <strong>init</strong>(self, cfg, in_channels=3, num_classes=None, sync_bn=False): super(MYmodel, self).<strong>init</strong>() self.cfg = cfg self.stride = Tensor(np.array(cfg.stride), ms.int32) self.stride_max = int(max(self.cfg .stride)) ch, nc = in_channels, num_classes self.nc = nc # override yaml value self.model = build_model_from_cfg(model_cfg=cfg, in_channels=ch, num_classes=nc, sync_bn=sync_bn) self.names = [str(i) for i in range(nc)] # default names initialize_defult() # Optional, you may need the initialize_defult method to get the same conv2d and dense layer initialization method as pytorch;</li>
+</ul>
+<p>def construct(self, x):
+return self.model(x)</p>
+<p><div class="highlight"><pre><span></span><code>## Register model (optional)
+If you need to use the mindyolo interface to initialize a custom model, you need to first **register** and **import** the model
+
+**Model registration** &lt;br&gt;
+```python
+@register_model #The registered model can be accessed by the create_model interface as a model name;
+def mymodel(cfg, in_channels=3, num_classes=None, **kwargs) -&gt; MYmodel:
+&quot;&quot;&quot;Get GoogLeNet model.
+Refer to the base class `models.GoogLeNet` for more details.&quot;&quot;&quot;
+model = MYmodel(cfg=cfg, in_channels=in_channels, num_classes=num_classes, **kwargs)
+return model
+</code></pre></div>
+<strong>Model import</strong> <br></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Add the following code to the mindyolo/models/_init_.py file</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">mymodel</span> <span class="c1">#mymodel.py files are usually placed in the mindyolo/models/directory</span>
+<span class="n">__all__</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">mymodel</span><span class="o">.</span><span class="n">__all__</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.mymodel</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<h2 id="verify-main">Verify main<a class="headerlink" href="#verify-main" title="Permanent link">&para;</a></h2>
+<p>The initial writing phase should ensure that the model is runnable. Basic verification can be performed through the following code block:
+First import the required modules and functions. Then, parse the configuration object.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="kn">from</span> <span class="nn">mindyolo.models.model_factory</span> <span class="kn">import</span> <span class="n">create_model</span>
+<span class="kn">from</span> <span class="nn">mindyolo.utils.config</span> <span class="kn">import</span> <span class="n">parse_config</span>
+
+<span class="n">opt</span> <span class="o">=</span> <span class="n">parse_config</span><span class="p">()</span>
+</code></pre></div>
+Create a model and specify related parameters. Note: If you want to use the file name to create a custom model in create_model, you need to register it using the register @register_model first. Please refer to the above Register model (optional) section
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span>
+<span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;mymodel&quot;</span><span class="p">,</span>
+<span class="n">model_cfg</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">net</span><span class="p">,</span>
+<span class="n">num_classes</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">nc</span><span class="p">,</span>
+<span class="n">sync_bn</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">sync_bn</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="s2">&quot;sync_bn&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></p>
+<p>Otherwise, please use import to introduce the model</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindyolo.models.mymodel</span> <span class="kn">import</span> <span class="n">MYmodel</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">MYmodel</span><span class="p">(</span>
+<span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;mymodel&quot;</span><span class="p">,</span>
+<span class="n">model_cfg</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">net</span><span class="p">,</span>
+<span class="n">num_classes</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">nc</span><span class="p">,</span>
+<span class="n">sync_bn</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">sync_bn</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="s2">&quot;sync_bn&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+Finally, create an input tensor x and pass it to the model for forward computation.
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">640</span><span class="p">),</span> <span class="n">ms</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="k">else</span> <span class="n">out</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output shape is </span><span class="si">{</span><span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">out</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
 
 
 
@@ -1059,13 +1439,13 @@
         
         
           
-          <a href="../../reference/data/" class="md-footer__link md-footer__link--next" aria-label="Next: data" rel="next">
+          <a href="../callback/" class="md-footer__link md-footer__link--next" aria-label="Next: Callback" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                data
+                Callback
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/modelarts/">
+        <link rel="canonical" href="https://mindspore-lab.github.io/mindyolo/how_to_guides/callback/">
       
       
-        <link rel="prev" href="../finetune/">
+        <link rel="prev" href="../write_a_new_model/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../../reference/data/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.20">
     
     
       
-        <title>CloudBrain - MindYOLO Docs</title>
+        <title>Callback - MindYOLO Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mindyolo-modelarts-training-quick-start" class="md-skip">
+        <a href="#usage-of-mindyolo-callback-function" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MindYOLO Docs" class="md-header__button md-logo" aria-label="MindYOLO Docs" data-md-component="logo">
+    <a href="../.." title="MindYOLO Docs" class="md-header__button md-logo" aria-label="MindYOLO Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CloudBrain
+              Callback
             
           </span>
         </div>
@@ -152,13 +152,13 @@
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../tutorials/modelarts/" hreflang="en" class="md-select__link">
+                  <a href="./" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
               
                 <li class="md-select__item">
-                  <a href="../../../zh/tutorials/modelarts/" hreflang="zh" class="md-select__link">
+                  <a href="../../zh/how_to_guides/callback/" hreflang="zh" class="md-select__link">
                     中文
                   </a>
                 </li>
@@ -241,7 +241,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../" class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -278,15 +278,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../quick_start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../tutorials/quick_start/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -296,13 +294,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../how_to_guides/data_preparation/" class="md-tabs__link">
+      <a href="../data_preparation/" class="md-tabs__link md-tabs__link--active">
         Developer Guides
       </a>
     </li>
@@ -362,7 +362,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MindYOLO Docs" class="md-nav__button md-logo" aria-label="MindYOLO Docs" data-md-component="logo">
+    <a href="../.." title="MindYOLO Docs" class="md-nav__button md-logo" aria-label="MindYOLO Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -570,16 +570,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -602,7 +600,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Tutorials
@@ -615,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
+      <a href="../../tutorials/quick_start/" class="md-nav__link">
         Quick Start
       </a>
     </li>
@@ -629,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../tutorials/configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -643,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data_augmentation/" class="md-nav__link">
+      <a href="../../tutorials/data_augmentation/" class="md-nav__link">
         Augmentation
       </a>
     </li>
@@ -657,8 +655,109 @@
   
   
     <li class="md-nav__item">
-      <a href="../finetune/" class="md-nav__link">
+      <a href="../../tutorials/finetune/" class="md-nav__link">
         Finetune
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/modelarts/" class="md-nav__link">
+        CloudBrain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Developer Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_preparation/" class="md-nav__link">
+        Data Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../write_a_new_model/" class="md-nav__link">
+        Write A New Model
       </a>
     </li>
   
@@ -680,168 +779,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          CloudBrain
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        CloudBrain
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-data-and-code" class="md-nav__link">
-    Prepare data and code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-code" class="md-nav__link">
-    Prepare code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-algorithm" class="md-nav__link">
-    Create new algorithm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-job" class="md-nav__link">
-    Create new job
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-job" class="md-nav__link">
-    Modify job
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
-        Deployment
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-      
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Developer Guides
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Developer Guides
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how_to_guides/data_preparation/" class="md-nav__link">
-        Data Preparation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how_to_guides/write_a_new_model/" class="md-nav__link">
-        Write A New Model
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../how_to_guides/callback/" class="md-nav__link">
         Callback
       </a>
+      
     </li>
   
 
@@ -908,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reference/models.md" class="md-nav__link">
+      <a href="../../reference/models.md" class="md-nav__link">
         models
       </a>
     </li>
@@ -1043,49 +984,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-data-and-code" class="md-nav__link">
-    Prepare data and code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-code" class="md-nav__link">
-    Prepare code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-algorithm" class="md-nav__link">
-    Create new algorithm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-job" class="md-nav__link">
-    Create new job
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-job" class="md-nav__link">
-    Modify job
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1099,7 +997,7 @@
                   
 
   
-    <a href="https://github.com/mindspore-lab/mindyolo/edit/master/docs/en/tutorials/modelarts.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/mindspore-lab/mindyolo/edit/master/docs/en/how_to_guides/callback.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1108,59 +1006,49 @@
     
       
     
-    <a href="https://github.com/mindspore-lab/mindyolo/raw/master/docs/en/tutorials/modelarts.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/mindspore-lab/mindyolo/raw/master/docs/en/how_to_guides/callback.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="mindyolo-modelarts-training-quick-start">MindYOLO ModelArts Training Quick Start<a class="headerlink" href="#mindyolo-modelarts-training-quick-start" title="Permanent link">&para;</a></h1>
-<p>This article mainly introduces the training method of MindYOLO using the <a href="https://www.huaweicloud.com/product/modelarts.html">ModelArts</a> platform.
-ModelArts related tutorial reference <a href="https://docs.xckpjs.com/zh-cn/modelarts/index.html">Help Center</a></p>
-<h2 id="prepare-data-and-code">Prepare data and code<a class="headerlink" href="#prepare-data-and-code" title="Permanent link">&para;</a></h2>
-<p>Use the OBS service to upload data sets. For related operation tutorials, see <a href="https://docs.xckpjs.com/zh-cn/obs/index.html">OBS User Guide</a> to obtain the [AK] of this account (https:// docs.xckpjs.com/zh-cn/browsertg/obs/obs_03_1007.html), please consult the corresponding platform administrator or account person in charge for the server address. If the AK is not in the location specified in the user guide, please also consult the platform administrator or account person in charge. . <br>
-operate:
-1. Log in to obs browser+
- <img alt="obs" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/obs.jpg" />
-2. Create a bucket -&gt; create a new folder (eg: coco)
- <img alt="Bucket" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E6%A1%B6.jpg" />
-3. To upload data files, please place the data files in a separate folder (that is, coco in the use case). The code will copy the data in the obs bucket, and the copied content will be all files in this folder (such as coco). document. Without creating a new folder, you cannot select the complete data set.</p>
-<p><img alt="Dataset" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E6%95%B0%E6%8D%AE%E9%9B%86.jpg" /></p>
-<h2 id="prepare-code">Prepare code<a class="headerlink" href="#prepare-code" title="Permanent link">&para;</a></h2>
-<p>Also use the OBS service to upload the training code. <br>
-Operation: Create a bucket -&gt; Create a new folder (such as: mindyolo) -&gt; Upload the code file, create an output folder at the same level of mindyolo to store training records, and create a log folder to store logs.
- <img alt="Bucket directory" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E4%BB%A3%E7%A0%81%E6%A1%B6.jpg" />
- <img alt="Kit code" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%A5%97%E4%BB%B6%E4%BB%A3%E7%A0%81.jpg" /></p>
-<h2 id="create-new-algorithm">Create new algorithm<a class="headerlink" href="#create-new-algorithm" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select Algorithm Management-&gt;Create in the tab.
- <img alt="Create algorithm" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E6%96%B0%E5%BB%BA%E7%AE%97%E6%B3%95.jpg" /></li>
-<li>Customize the algorithm name, select Ascend-Powered-Engine for the prefabricated framework, select the MindSpore-2.0 version image for the master branch, and select the MindSpore-1.8.1 version image for the r0.1 branch. Set the code directory, startup file, input, and output. and superparameters.
- <img alt="Algorithm configuration" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE.jpg" /></li>
-</ol>
-<ul>
-<li>If you need to load pre-trained weights, you can select the uploaded model file in the model selection and add the ckpt_dir parameter in the running parameters.
- <img alt="ckpt" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/ckpt.jpg" /></li>
-<li>The startup file is train.py</li>
-<li>To run super parameters, enable_modelarts needs to be added, and the value is True.</li>
-<li>The running super parameter config path refers to the directory of the running environment preview in the training job, such as /home/ma-user/modelarts/user-job-dir/mindyolo/configs/yolov5/yolov5n.yaml</li>
-<li>If distributed training scenarios are involved, the hyperparameter is_parallel needs to be added and set to True when running in distributed mode and False when running on a single card.</li>
-</ul>
-<h2 id="create-new-job">Create new job<a class="headerlink" href="#create-new-job" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select in the ModelArts service: Training Management -&gt; Training Jobs -&gt; Create a training job, set the job name, and choose not to include it in the experiment; Create Method -&gt; My Algorithm, select the newly created algorithm;
- <img alt="task" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A.jpg" />
- <img alt="task1" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A1.jpg" /></li>
-<li>Training input -&gt; Data storage location, select the obs data bucket just created (coco in the example), select the output folder when preparing the code for training output, and set the config hyperparameter value according to the running environment preview;
- <img alt="task2" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A2.jpg" /></li>
-<li>Select the resource pool, specifications, computing nodes, and select the log folder when creating the code for the job log path.
- <img alt="task3" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A3.jpg" />
- <img alt="Specifications" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%A7%84%E6%A0%BC.jpg" /></li>
-<li>Submit training and it will be running after queuing.</li>
-</ol>
-<h2 id="modify-job">Modify job<a class="headerlink" href="#modify-job" title="Permanent link">&para;</a></h2>
-<p>Select Rebuild on the training job page to modify the selected job configuration.</p>
+<h1 id="usage-of-mindyolo-callback-function">Usage of MindYOLO callback function<a class="headerlink" href="#usage-of-mindyolo-callback-function" title="Permanent link">&para;</a></h1>
+<p><strong>Callback function</strong>: When the program runs to a certain mount point, all methods registered to the mount point at runtime will be automatically called.
+The flexibility and extensibility of the program can be increased by using the callback function, because users can register custom methods to the mount point to be called without modifying the code in the program.</p>
+<p>In MindYOLO, the callback function is specifically implemented in the mindyolo/utils/callback.py file.
+<div class="highlight"><pre><span></span><code><span class="c1">#mindyolo/utils/callback.py</span>
+<span class="nd">@CALLBACK_REGISTRY</span><span class="o">.</span><span class="n">registry_module</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">callback_class_name</span><span class="p">(</span><span class="n">BaseCallback</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">callback_fn_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">):</span>
+<span class="k">pass</span>
+</code></pre></div></p>
+<p>Add a dictionary list under the callback field of the model's yaml file to implement the call
+<div class="highlight"><pre><span></span><code><span class="c1">#Callback function configuration dictionary:</span>
+<span class="nt">callback</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">callback_class_name</span><span class="p p-Indicator">,</span><span class="nt"> args</span><span class="p">:</span><span class="w"> </span><span class="nv">xx</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">callback_class_name2</span><span class="p p-Indicator">,</span><span class="nt"> args</span><span class="p">:</span><span class="w"> </span><span class="nv">xx</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+For example, take YOLOX as an example:</p>
+<p>Add logic to the on_train_step_begin method in the YoloxSwitchTrain class in the mindyolo/utils/callback.py file to print "train step begin” log
+<div class="highlight"><pre><span></span><code><span class="nd">@CALLBACK_REGISTRY</span><span class="o">.</span><span class="n">registry_module</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">YoloxSwitchTrain</span><span class="p">(</span><span class="n">BaseCallback</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">on_train_step_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">):</span>
+<span class="c1"># Custom logic</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;train step begin&quot;</span><span class="p">)</span>
+<span class="k">pass</span>
+</code></pre></div>
+Add the callback function under the callback field of the YOLOX corresponding yaml file configs/yolox/hyp.scratch.yaml
+<div class="highlight"><pre><span></span><code><span class="nt">callback</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">YoloxSwitchTrain</span><span class="p p-Indicator">,</span><span class="nt"> switch_epoch_num</span><span class="p">:</span><span class="w"> </span><span class="nv">285</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+Then the logger.info("train step begin") statement will be executed before each training step is executed.</p>
+<p>With the help of the callback function, users can customize the logic that needs to be executed at a certain mount point without having to understand the code of the complete training process.</p>
 
 
 
@@ -1189,7 +1077,7 @@ Operation: Create a bucket -&gt; Create a new folder (such as: mindyolo) -&gt; U
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../finetune/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Finetune" rel="prev">
+          <a href="../write_a_new_model/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Write A New Model" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1198,20 +1086,20 @@ Operation: Create a bucket -&gt; Create a new folder (such as: mindyolo) -&gt; U
                 Previous
               </span>
               <div class="md-ellipsis">
-                Finetune
+                Write A New Model
               </div>
             </div>
           </a>
         
         
           
-          <a href="../deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment" rel="next">
+          <a href="../../reference/data/" class="md-footer__link md-footer__link--next" aria-label="Next: data" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deployment
+                data
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1276,10 +1164,10 @@ Operation: Create a bucket -&gt; Create a new folder (such as: mindyolo) -&gt; U
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.share", "search.suggest", "content.action.view", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotations"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.share", "search.suggest", "content.action.view", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotations"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

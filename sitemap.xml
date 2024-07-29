@@ -17,6 +17,14 @@
          
     </url>
     <url>
+         <loc>https://mindspore-lab.github.io/mindyolo/how_to_guides/callback/</loc>
+         <lastmod>2024-07-29</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/how_to_guides/callback/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/how_to_guides/callback/"/>
+         
+    </url>
+    <url>
          <loc>https://mindspore-lab.github.io/mindyolo/how_to_guides/data_preparation/</loc>
          <lastmod>2024-07-29</lastmod>
          <changefreq>daily</changefreq>
