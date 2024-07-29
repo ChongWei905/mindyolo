@@ -1120,12 +1120,14 @@
 ModelArts related tutorial reference <a href="https://docs.xckpjs.com/zh-cn/modelarts/index.html">Help Center</a></p>
 <h2 id="prepare-data-and-code">Prepare data and code<a class="headerlink" href="#prepare-data-and-code" title="Permanent link">&para;</a></h2>
 <p>Use the OBS service to upload data sets. For related operation tutorials, see <a href="https://docs.xckpjs.com/zh-cn/obs/index.html">OBS User Guide</a> to obtain the [AK] of this account (https:// docs.xckpjs.com/zh-cn/browsertg/obs/obs_03_1007.html), please consult the corresponding platform administrator or account person in charge for the server address. If the AK is not in the location specified in the user guide, please also consult the platform administrator or account person in charge. . <br>
-operate:
-1. Log in to obs browser+
- <img alt="obs" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/obs.jpg" />
-2. Create a bucket -&gt; create a new folder (eg: coco)
- <img alt="Bucket" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E6%A1%B6.jpg" />
-3. To upload data files, please place the data files in a separate folder (that is, coco in the use case). The code will copy the data in the obs bucket, and the copied content will be all files in this folder (such as coco). document. Without creating a new folder, you cannot select the complete data set.</p>
+operate:</p>
+<ol>
+<li>Log in to obs browser+
+ <img alt="obs" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/obs.jpg" /></li>
+<li>Create a bucket -&gt; create a new folder (eg: coco)
+ <img alt="Bucket" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E6%A1%B6.jpg" /></li>
+<li>To upload data files, please place the data files in a separate folder (that is, coco in the use case). The code will copy the data in the obs bucket, and the copied content will be all files in this folder (such as coco). document. Without creating a new folder, you cannot select the complete data set.</li>
+</ol>
 <p><img alt="Dataset" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E6%95%B0%E6%8D%AE%E9%9B%86.jpg" /></p>
 <h2 id="prepare-code">Prepare code<a class="headerlink" href="#prepare-code" title="Permanent link">&para;</a></h2>
 <p>Also use the OBS service to upload the training code. <br>
