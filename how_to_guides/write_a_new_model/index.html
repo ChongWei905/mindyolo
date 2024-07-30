@@ -1223,10 +1223,12 @@
 
 <h1 id="model-writing-guide">Model Writing Guide<a class="headerlink" href="#model-writing-guide" title="Permanent link">&para;</a></h1>
 <p>This document provides a tutorial for writing custom models for MindYOLO. <br>
-It is divided into three parts:
-- Model definition: We can define a network directly or use a yaml file to define a network.
-- Register model: Optional. After registration, you can use the file name in the create_model interface to create a custom model
-- Verification: Verify whether the model is operational</p>
+It is divided into three parts:</p>
+<ul>
+<li>Model definition: We can define a network directly or use a yaml file to define a network.</li>
+<li>Register model: Optional. After registration, you can use the file name in the create_model interface to create a custom model</li>
+<li>Verification: Verify whether the model is operational</li>
+</ul>
 <h2 id="model-definition">Model definition<a class="headerlink" href="#model-definition" title="Permanent link">&para;</a></h2>
 <h3 id="1-use-python-code-directly-to-write-the-network">1. Use python code directly to write the network<a class="headerlink" href="#1-use-python-code-directly-to-write-the-network" title="Permanent link">&para;</a></h3>
 <h4 id="module-import">Module import<a class="headerlink" href="#module-import" title="Permanent link">&para;</a></h4>
@@ -1267,10 +1269,12 @@ It is divided into three parts:
 <div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="2-use-yaml-file-to-write-network">2. Use yaml file to write network<a class="headerlink" href="#2-use-yaml-file-to-write-network" title="Permanent link">&para;</a></h3>
-<p>Usually need the following three steps
-- Create a new mymodel.yaml file
-- Create a corresponding mymodel.py file
-- Introduce the model in the mindyolo/models/<em>init</em>.py file</p>
+<p>Usually need the following three steps:</p>
+<ul>
+<li>Create a new mymodel.yaml file</li>
+<li>Create a corresponding mymodel.py file</li>
+<li>Introduce the model in the mindyolo/models/<em>init</em>.py file</li>
+</ul>
 <p>Here is a detailed guide to writing mymodel.yaml file:<br>
 Take writing a simple network as an example:
 Write the necessary parameters in yaml format, and then use these parameters in the mymodel.py file.

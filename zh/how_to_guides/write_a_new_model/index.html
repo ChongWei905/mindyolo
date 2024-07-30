@@ -1237,10 +1237,12 @@
 
 <h1 id="_1">模型编写指南<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>本文档提供MindYOLO编写自定义模型的教程。<br>
-分为三个部分：
-- 模型定义：我们可以直接定义一个网络，也可以使用yaml文件方式定义一个网络。
-- 注册模型：可选，注册之后可以在create_model接口中使用文件名创建自定义的模型
-- 验证: 验证模型是否可运行</p>
+分为三个部分：</p>
+<ul>
+<li>模型定义：我们可以直接定义一个网络，也可以使用yaml文件方式定义一个网络。</li>
+<li>注册模型：可选，注册之后可以在create_model接口中使用文件名创建自定义的模型</li>
+<li>验证: 验证模型是否可运行</li>
+</ul>
 <h2 id="_2">模型定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1python">1.直接使用python代码来编写网络<a class="headerlink" href="#1python" title="Permanent link">&para;</a></h3>
 <h4 id="_3">模块导入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
@@ -1281,10 +1283,12 @@
 <div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="2yaml">2.使用yaml文件编写网络<a class="headerlink" href="#2yaml" title="Permanent link">&para;</a></h3>
-<p>通常需要以下三个步骤
-- 新建一个mymodel.yaml文件
-- 新建对应的mymodel.py文件 
-- 在mindyolo/models/<em>init</em>.py文件中引入该模型</p>
+<p>通常需要以下三个步骤：</p>
+<ul>
+<li>新建一个mymodel.yaml文件</li>
+<li>新建对应的mymodel.py文件 </li>
+<li>在mindyolo/models/<em>init</em>.py文件中引入该模型</li>
+</ul>
 <p>以下是编写mymodel.yaml文件的详细指导:<br>
 以编写一个简单网络为例：
 以yaml格式编写必要参数，后续在mymodel.py文件里面可以用到这些参数。

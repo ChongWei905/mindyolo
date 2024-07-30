@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#models" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -873,9 +873,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#createmodel" class="md-nav__link">
-    CreateModel
+  <a href="#_2" class="md-nav__link">
+    创建模型
   </a>
+  
+    <nav class="md-nav" aria-label="创建模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.model_factory.create_model" class="md-nav__link">
+    create_model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1142,9 +1155,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#createmodel" class="md-nav__link">
-    CreateModel
+  <a href="#_2" class="md-nav__link">
+    创建模型
   </a>
+  
+    <nav class="md-nav" aria-label="创建模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.model_factory.create_model" class="md-nav__link">
+    create_model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1299,9 +1325,79 @@
   
 
 
-<h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h1>
-<h2 id="createmodel">CreateModel<a class="headerlink" href="#createmodel" title="Permanent link">&para;</a></h2>
-<h2 id="yolov3">YOLOV3<a class="headerlink" href="#yolov3" title="Permanent link">&para;</a></h2>
+<h1 id="_1">模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">创建模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.model_factory.create_model" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">model_factory</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.model_factory.create_model" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\model_factory.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">model_cfg</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">model_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">model_cfg</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">)</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown model </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">create_fn</span> <span class="o">=</span> <span class="n">model_entrypoint</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">create_fn</span><span class="p">(</span><span class="o">**</span><span class="n">model_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">checkpoint_path</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">checkpoint_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
+            <span class="s2">&quot;.ckpt&quot;</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">checkpoint_path</span><span class="si">}</span><span class="s2">] not a ckpt file.&quot;</span>
+        <span class="n">checkpoint_param</span> <span class="o">=</span> <span class="n">load_checkpoint</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">)</span>
+        <span class="n">load_param_into_net</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">checkpoint_param</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Load checkpoint from [</span><span class="si">{</span><span class="n">checkpoint_path</span><span class="si">}</span><span class="s2">] success.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolov3">YOLOV3<a class="headerlink" href="#yolov3" title="Permanent link">&para;</a></h2>
 
 
 <div class="doc doc-object doc-function">
