@@ -8,16 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://mindspore-lab.github.io/mindyolo/zh/reference/loss/">
+        <link rel="canonical" href="https://mindspore-lab.github.io/mindyolo/zh/reference/models/">
       
       
+        <link rel="prev" href="../data/">
+      
+      
+        <link rel="next" href="../../notes/changelog/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.20">
     
     
       
-        <title>Loss - MindYOLO Docs</title>
+        <title>模型 - MindYOLO Docs</title>
       
     
     
@@ -71,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#loss" class="md-skip">
+        <a href="#models" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Loss
+              模型
             
           </span>
         </div>
@@ -148,7 +152,7 @@
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../reference/loss/" hreflang="en" class="md-select__link">
+                  <a href="../../../reference/models/" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
@@ -306,13 +310,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../data/" class="md-tabs__link">
+      <a href="../data/" class="md-tabs__link md-tabs__link--active">
         引用
       </a>
     </li>
@@ -782,14 +788,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
         
@@ -804,7 +812,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           引用
@@ -818,7 +826,7 @@
   
     <li class="md-nav__item">
       <a href="../data/" class="md-nav__link">
-        data
+        数据
       </a>
     </li>
   
@@ -829,11 +837,172 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
-        models
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        模型
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#createmodel" class="md-nav__link">
+    CreateModel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov3" class="md-nav__link">
+    YOLOV3
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov3" class="md-nav__link">
+    yolov3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov4" class="md-nav__link">
+    YOLOV4
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov4" class="md-nav__link">
+    yolov4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov5" class="md-nav__link">
+    YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov5" class="md-nav__link">
+    yolov5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov7" class="md-nav__link">
+    YOLOV7
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov7" class="md-nav__link">
+    yolov7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8" class="md-nav__link">
+    YOLOV8
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov8" class="md-nav__link">
+    yolov8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolox" class="md-nav__link">
+    YOLOX
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolox" class="md-nav__link">
+    yolox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -905,7 +1074,7 @@
   
     <li class="md-nav__item">
       <a href="../../notes/contributing/" class="md-nav__link">
-        Contributing
+        参与项目
       </a>
     </li>
   
@@ -973,9 +1142,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#loss-factory" class="md-nav__link">
-    Loss Factory
+  <a href="#createmodel" class="md-nav__link">
+    CreateModel
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov3" class="md-nav__link">
+    YOLOV3
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov3" class="md-nav__link">
+    yolov3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov4" class="md-nav__link">
+    YOLOV4
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov4" class="md-nav__link">
+    yolov4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov5" class="md-nav__link">
+    YOLOV5
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov5" class="md-nav__link">
+    yolov5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov7" class="md-nav__link">
+    YOLOV7
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov7" class="md-nav__link">
+    yolov7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolov8" class="md-nav__link">
+    YOLOV8
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOV8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolov8" class="md-nav__link">
+    yolov8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yolox" class="md-nav__link">
+    YOLOX
+  </a>
+  
+    <nav class="md-nav" aria-label="YOLOX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mindyolo.models.yolox" class="md-nav__link">
+    yolox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -994,7 +1283,7 @@
                   
 
   
-    <a href="https://github.com/mindspore-lab/mindyolo/edit/master/docs/zh/reference/loss.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/mindspore-lab/mindyolo/edit/master/docs/zh/reference/models.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1003,15 +1292,202 @@
     
       
     
-    <a href="https://github.com/mindspore-lab/mindyolo/raw/master/docs/zh/reference/loss.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/mindspore-lab/mindyolo/raw/master/docs/zh/reference/models.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="loss">Loss<a class="headerlink" href="#loss" title="Permanent link">&para;</a></h1>
-<h2 id="loss-factory">Loss Factory<a class="headerlink" href="#loss-factory" title="Permanent link">&para;</a></h2>
+<h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h1>
+<h2 id="createmodel">CreateModel<a class="headerlink" href="#createmodel" title="Permanent link">&para;</a></h2>
+<h2 id="yolov3">YOLOV3<a class="headerlink" href="#yolov3" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolov3" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolov3</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolov3" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolov3 model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolov3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolov3</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOv3</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolov3 model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOv3</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolov4">YOLOV4<a class="headerlink" href="#yolov4" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolov4" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolov4</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolov4" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolov4 model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolov4.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolov4</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOv4</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolov4 model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOv4</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolov5">YOLOV5<a class="headerlink" href="#yolov5" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolov5" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolov5</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolov5" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolov5 model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolov5.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolov5</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOv5</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolov5 model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOv5</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolov7">YOLOV7<a class="headerlink" href="#yolov7" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolov7" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolov7</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolov7" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolov7 model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolov7.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolov7</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOv7</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolov7 model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOv7</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolov8">YOLOV8<a class="headerlink" href="#yolov8" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolov8" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolov8</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolov8" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolov8 model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolov8.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolov8</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOv8</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolov8 model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOv8</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="yolox">YOLOX<a class="headerlink" href="#yolox" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mindyolo.models.yolox" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mindyolo</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">yolox</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#mindyolo.models.yolox" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents first">
+
+      <p>Get yolox model.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>mindyolo\models\yolox.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@register_model</span>
+<span class="k">def</span> <span class="nf">yolox</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">YOLOX</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get yolox model.&quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLOX</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
 
 
 
@@ -1035,6 +1511,42 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../data/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数据" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                数据
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../notes/changelog/" class="md-footer__link md-footer__link--next" aria-label="下一页: 更新日志" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                更新日志
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
