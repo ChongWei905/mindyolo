@@ -1128,13 +1128,12 @@
 
 
 <h1 id="_1">快速开始<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<!-- BEGIN INCLUDE ../../../GETTING_STARTED_CN.md -->
 <h2 id="mindyolo">MindYOLO 快速入门<a class="headerlink" href="#mindyolo" title="Permanent link">&para;</a></h2>
 <p>本文简要介绍MindYOLO中内置的命令行工具的使用方法。</p>
 <h3 id="_2">使用预训练模型进行推理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>从<a href="../../../benchmark_results.md">模型仓库</a>中选择一个模型及其配置文件，例如， <code>./configs/yolov7/yolov7.yaml</code>.</li>
-<li>从<a href="../../../benchmark_results.md">模型仓库</a>中下载相应的预训练模型权重文件。</li>
+<li>从<a href="../../modelzoo/benchmark/">模型仓库</a>中选择一个模型及其配置文件，例如， <code>./configs/yolov7/yolov7.yaml</code>.</li>
+<li>从<a href="../../modelzoo/benchmark/">模型仓库</a>中下载相应的预训练模型权重文件。</li>
 <li>使用内置配置进行推理，请运行以下命令：</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1"># NPU (默认)</span>
@@ -1191,12 +1190,11 @@ python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<sp
 </code></pre></div>
 <p><em>注意：默认超参为8卡训练，单卡情况需调整部分参数。 默认设备为Ascend，您可以指定'device_target'的值为Ascend/GPU/CPU。</em>
 * 有关更多选项，请参阅 <code>train/test.py -h</code>.
-* 在云脑上进行训练，请在<a href="../../../tutorials/cloud/modelarts_CN.md">这里</a>查看</p>
+* 在CloudBrain上进行训练，请在<a href="./tutorials/cloud/modelarts_CN.md">这里</a>查看</p>
 <h3 id="_4">部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>请在<a href="../../../deploy/README.md">这里</a>查看.</p>
+<p>请在<a href="../deployment/">这里</a>查看.</p>
 <h3 id="mindyolo-api">在代码中使用MindYOLO API<a class="headerlink" href="#mindyolo-api" title="Permanent link">&para;</a></h3>
 <p>敬请期待</p>
-<!-- END INCLUDE -->
 
 
 

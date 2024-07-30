@@ -1132,25 +1132,23 @@
 <p>This document provides a brief introduction to the usage of built-in command-line tools in MindYOLO.</p>
 <h3 id="inference-demo-with-pre-trained-models">Inference Demo with Pre-trained Models<a class="headerlink" href="#inference-demo-with-pre-trained-models" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Pick a model and its config file from the
-  <a href="../../modelzoo/benchmark/">Model Zoo</a>,
-  such as, <code>./configs/yolov7/yolov7.yaml</code>.</li>
+<li>Pick a model and its config file from the <a href="../../modelzoo/benchmark/">Model Zoo</a>, such as, <code>./configs/yolov7/yolov7.yaml</code>.</li>
 <li>Download the corresponding pre-trained checkpoint from the <a href="../../modelzoo/benchmark/">Model Zoo</a> of each model.</li>
 <li>To run YOLO object detection with the built-in configs, please run:</li>
 </ol>
-<div class="highlight"><pre><span></span><code># Run with Ascend (By default)
-python demo/predict.py --config ./configs/yolov7/yolov7.yaml --weight=/path_to_ckpt/WEIGHT.ckpt --image_path /path_to_image/IMAGE.jpg
+<div class="highlight"><pre><span></span><code><span class="c1"># Run with Ascend (By default)</span>
+python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="o">=</span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--image_path<span class="w"> </span>/path_to_image/IMAGE.jpg
 
-# Run with GPU
-python demo/predict.py --config ./configs/yolov7/yolov7.yaml --weight=/path_to_ckpt/WEIGHT.ckpt --image_path /path_to_image/IMAGE.jpg --device_target=GPU
+<span class="c1"># Run with GPU</span>
+python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="o">=</span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--image_path<span class="w"> </span>/path_to_image/IMAGE.jpg<span class="w"> </span>--device_target<span class="o">=</span>GPU
 </code></pre></div>
-<p>For details of the command line arguments, see <code>demo/predict.py -h</code> or look at its <a href="https://github.com/mindspore-lab/mindyolo/blob/master/deploy/predict.py">source code</a>
+<p>For details of the command line arguments, see <code>demo/predict.py -h</code> or look at its <a href="https://github.com/mindspore-lab/mindyolo/blob/master/deploy/predict.py">source code</a>.
 to understand their behavior. Some common arguments are:
 * To run on cpu, modify device_target to CPU.
 * The results will be saved in <code>./detect_results</code></p>
 <h3 id="training-evaluation-in-command-line">Training &amp; Evaluation in Command Line<a class="headerlink" href="#training-evaluation-in-command-line" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Prepare your dataset in YOLO format. If trained with COCO (YOLO format), prepare it from <a href="https://github.com/ultralytics/yolov5">yolov5</a> or the darknet.</li>
+<li>Prepare your dataset in YOLO format. If training with COCO (YOLO format), please prepare it from <a href="https://github.com/ultralytics/yolov5">yolov5</a> or the darknet.</li>
 </ul>
 <details onclose>
 
@@ -1174,24 +1172,25 @@ to understand their behavior. Some common arguments are:
 <ul>
 <li>
 <p>To train a model on 8 NPUs/GPUs:
-  <div class="highlight"><pre><span></span><code>mpirun --allow-run-as-root -n 8 python train.py --config ./configs/yolov7/yolov7.yaml  --is_parallel True
+  <div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>--allow-run-as-root<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w">  </span>--is_parallel<span class="w"> </span>True
 </code></pre></div></p>
 </li>
 <li>
 <p>To train a model on 1 NPU/GPU/CPU:
-  <div class="highlight"><pre><span></span><code>python train.py --config ./configs/yolov7/yolov7.yaml 
+  <div class="highlight"><pre><span></span><code>python<span class="w"> </span>train.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>
 </code></pre></div></p>
 </li>
 <li>
 <p>To evaluate a model's performance on 1 NPU/GPU/CPU:
-  <div class="highlight"><pre><span></span><code>python test.py --config ./configs/yolov7/yolov7.yaml --weight /path_to_ckpt/WEIGHT.ckpt
+  <div class="highlight"><pre><span></span><code>python<span class="w"> </span>test.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="w"> </span>/path_to_ckpt/WEIGHT.ckpt
 </code></pre></div></p>
 </li>
 <li>To evaluate a model's performance 8 NPUs/GPUs:
-  <div class="highlight"><pre><span></span><code>mpirun --allow-run-as-root -n 8 python test.py --config ./configs/yolov7/yolov7.yaml --weight /path_to_ckpt/WEIGHT.ckpt --is_parallel True
+  <div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>--allow-run-as-root<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>test.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="w"> </span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--is_parallel<span class="w"> </span>True
 </code></pre></div>
 <em>Notes: (1) The default hyper-parameter is used for 8-card training, and some parameters need to be adjusted in the case of a single card. (2) The default device is Ascend, and you can modify it by specifying 'device_target' as Ascend/GPU/CPU, as these are currently supported.</em></li>
 <li>For more options, see <code>train/test.py -h</code>.</li>
+<li>To train on CloudBrain, see <a href="../modelarts/">here</a></li>
 </ul>
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <p>See <a href="../deployment/">here</a>.</p>

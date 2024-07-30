@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mindyolo-modelarts" class="md-skip">
           跳转至
         </a>
       
@@ -680,9 +680,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          云上启动
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         云上启动
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    准备数据及代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    准备代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    新建算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新建作业
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    修改作业
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -984,6 +1043,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    准备数据及代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    准备代码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    新建算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新建作业
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    修改作业
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1013,55 +1115,52 @@
   
 
 
-<h1 id="_1">云上启动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<!-- BEGIN INCLUDE ../../../tutorials/cloud/modelarts_CN.md -->
 <h1 id="mindyolo-modelarts">MindYOLO ModelArts训练快速入门<a class="headerlink" href="#mindyolo-modelarts" title="Permanent link">&para;</a></h1>
 <p>本文主要介绍MindYOLO借助<a href="https://www.huaweicloud.com/product/modelarts.html">ModelArts</a>平台的训练方法。
 ModelArts相关教程参考<a href="https://docs.xckpjs.com/zh-cn/modelarts/index.html">帮助中心</a></p>
-<h2 id="_2">准备数据及代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">准备数据及代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>使用OBS服务上传数据集，相关操作教程见<a href="https://docs.xckpjs.com/zh-cn/obs/index.html">OBS用户指南</a>，获取本账户的<a href="https://docs.xckpjs.com/zh-cn/browsertg/obs/obs_03_1007.html">AK</a>，服务器地址请咨询对应平台管理员或账号负责人，如AK不在用户指南指定位置，也请咨询平台管理员或账号负责人。<br>
 操作：
 1. 登录obs browser+
-<img alt="obs" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/obs.jpg" />
+<img alt="obs" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/obs.jpg" />
 2. 创建桶 -&gt; 新建文件夹（如：coco）
-<img alt="桶" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E6%A1%B6.jpg" />
+<img alt="桶" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E6%A1%B6.jpg" />
 3. 上传数据文件，请将数据文件统一单独放置在一个文件夹内（即用例中的coco），代码中会对obs桶内数据做拷贝，拷贝内容为此文件夹（如：coco）下所有的文件。如未新建文件夹，就无法选择完整数据集。
-<img alt="数据集" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E6%95%B0%E6%8D%AE%E9%9B%86.jpg" /></p>
-<h2 id="_3">准备代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<img alt="数据集" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E6%95%B0%E6%8D%AE%E9%9B%86.jpg" /></p>
+<h2 id="_2">准备代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>同样使用OBS服务上传训练代码。<br>
 操作：创建桶 -&gt; 新建文件夹（如：mindyolo）-&gt; 上传代码文件，在mindyolo同层级下创建output文件夹用于存放训练记录，创建log文件夹用于存放日志。
-<img alt="桶目录" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E4%BB%A3%E7%A0%81%E6%A1%B6.jpg" />
-<img alt="套件代码" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E5%A5%97%E4%BB%B6%E4%BB%A3%E7%A0%81.jpg" /></p>
-<h2 id="_4">新建算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<img alt="桶目录" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E4%BB%A3%E7%A0%81%E6%A1%B6.jpg" />
+<img alt="套件代码" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%A5%97%E4%BB%B6%E4%BB%A3%E7%A0%81.jpg" /></p>
+<h2 id="_3">新建算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在选项卡中选择算法管理-&gt;创建。
-<img alt="创建算法" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E6%96%B0%E5%BB%BA%E7%AE%97%E6%B3%95.jpg" /></li>
+<img alt="创建算法" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E6%96%B0%E5%BB%BA%E7%AE%97%E6%B3%95.jpg" /></li>
 <li>自定义算法名称，预制框架选择Ascend-Powered-Engine，master分支请选择MindSpore-2.0版本镜像，r0.1分支请选择MindSpore-1.8.1版本镜像，设置代码目录、启动文件、输入、输出以及超参。
-<img alt="算法配置" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE.jpg" /></li>
+<img alt="算法配置" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE.jpg" /></li>
 </ol>
 <ul>
 <li>如需加载预训练权重，可在选择模型中选择已上传的模型文件，并在运行参数中增加ckpt_dir参数
-<img alt="ckpt" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/ckpt.jpg" /></li>
+<img alt="ckpt" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/ckpt.jpg" /></li>
 <li>启动文件为train.py</li>
 <li>运行超参需添加enable_modelarts，值为True</li>
 <li>运行超参config路径参考训练作业中运行环境预览的目录，如/home/ma-user/modelarts/user-job-dir/mindyolo/configs/yolov5/yolov5n.yaml</li>
 <li>如涉及分布式训练场景，需增加超参is_parallel，并在分布式运行时设置为True，单卡时为False</li>
 </ul>
-<h2 id="_5">新建作业<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_4">新建作业<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在ModelArts服务中选择：训练管理 -&gt; 训练作业 -&gt; 创建训练作业，设置作业名称，选择不纳入实验；创建方式-&gt;我的算法选择刚才新建的算法；
-<img alt="task" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A.jpg" />
-<img alt="task1" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A1.jpg" /></li>
+<img alt="task" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E5%88%9B%E5%BB%BA%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A.jpg" />
+<img alt="task1" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A1.jpg" /></li>
 <li>训练输入-&gt;数据存储位置，选择刚才创建的obs数据桶（示例中为coco），训练输出选择准备代码时的output文件夹，并根据运行环境预览设置好config超参值;
-<img alt="task2" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A2.jpg" /></li>
+<img alt="task2" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A2.jpg" /></li>
 <li>选择资源池、规格、计算节点，作业日志路径选择创建代码时的log文件夹
-<img alt="task3" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A3.jpg" />
-<img alt="规格" src="https://github.com/Ash-Lee233/image/blob/main/mindyolo/modelarts_tutorial/%E8%A7%84%E6%A0%BC.jpg" /></li>
+<img alt="task3" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%AE%AD%E7%BB%83%E4%BD%9C%E4%B8%9A3.jpg" />
+<img alt="规格" src="https://github.com/Ash-Lee233/image/raw/main/mindyolo/modelarts_tutorial/%E8%A7%84%E6%A0%BC.jpg" /></li>
 <li>提交训练，排队后会进入运行中</li>
 </ol>
-<h2 id="_6">修改作业<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">修改作业<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>在训练作业页面选择重建，可修改选择的作业配置</p>
-<!-- END INCLUDE -->
 
 
 

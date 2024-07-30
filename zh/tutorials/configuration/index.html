@@ -1428,7 +1428,7 @@
 <li>...</li>
 </ul>
 <h3 id="yaml">yaml文件样例<a class="headerlink" href="#yaml" title="Permanent link">&para;</a></h3>
-<p>该部分参数在<a href="../configs/coco.yaml">configs/coco.yaml</a>中定义，通常需修改其中的数据集路径</p>
+<p>该部分参数在<a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/coco.yaml">configs/coco.yaml</a>中定义，通常需修改其中的数据集路径</p>
 <div class="highlight"><pre><span></span><code><span class="nt">data</span><span class="p">:</span>
 <span class="w"> </span><span class="nt">dataset_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coco</span>
 
@@ -1458,7 +1458,7 @@
 <li>...</li>
 </ul>
 <h3 id="yaml_1">yaml文件样例<a class="headerlink" href="#yaml_1" title="Permanent link">&para;</a></h3>
-<p>该部分参数在<a href="../configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义，其中train_transformers和test_transformers均为由字典组成的列表，各字典包含数据增强操作名称、发生概率及该增强方法相关的参数</p>
+<p>该部分参数在<a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义，其中train_transformers和test_transformers均为由字典组成的列表，各字典包含数据增强操作名称、发生概率及该增强方法相关的参数</p>
 <div class="highlight"><pre><span></span><code><span class="nt">data</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">num_parallel_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 
@@ -1492,7 +1492,7 @@
 <li>head: 模型检测头</li>
 </ul>
 <h3 id="yaml_2">yaml文件样例<a class="headerlink" href="#yaml_2" title="Permanent link">&para;</a></h3>
-<p>该部分参数在<a href="../configs/yolov3/yolov3.yaml">configs/yolov3/yolov3.yaml</a>中定义，根据backbon和head参数进行网络构建，参数以嵌套列表的形式呈现，每行代表一层模块，包含4个参数，分别是 输入层编号(-1代表上一层)、模块重复次数、模块名称和模块相应参数。用户也可以不借助yaml文件而直接在py文件中定义和注册网络。</p>
+<p>该部分参数在<a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/yolov3.yaml</a>中定义，根据backbon和head参数进行网络构建，参数以嵌套列表的形式呈现，每行代表一层模块，包含4个参数，分别是 输入层编号(-1代表上一层)、模块重复次数、模块名称和模块相应参数。用户也可以不借助yaml文件而直接在py文件中定义和注册网络。</p>
 <div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yolov3</span>
 
@@ -1559,7 +1559,7 @@
 <li>label_smoothing: 标签平滑值</li>
 </ul>
 <h3 id="yaml_3">yaml文件样例<a class="headerlink" href="#yaml_3" title="Permanent link">&para;</a></h3>
-<p>该部分参数在<a href="../configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义</p>
+<p>该部分参数在<a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义</p>
 <div class="highlight"><pre><span></span><code><span class="nt">loss</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOLOv7Loss</span>
 <span class="w">  </span><span class="nt">box</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span><span class="w">  </span><span class="c1"># box loss gain</span>
@@ -1589,7 +1589,7 @@
 <li>nesterov：是否使用Nesterov Accelerated Gradient (NAG)算法更新梯度。</li>
 </ul>
 <h3 id="yaml_4">yaml文件样例<a class="headerlink" href="#yaml_4" title="Permanent link">&para;</a></h3>
-<p>该部分参数在<a href="../configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义，如下示例中经过warmup阶段后的初始学习率为lr_init * start_factor = 0.01 * 1.0 = 0.01, 最终学习率为lr_init * end_factor = 0.01 * 0.01 = 0.0001</p>
+<p>该部分参数在<a href="https://github.com/mindspore-lab/mindyolo/blob/master/configs/yolov3/hyp.scratch.yaml">configs/yolov3/hyp.scratch.yaml</a>中定义，如下示例中经过warmup阶段后的初始学习率为lr_init * start_factor = 0.01 * 1.0 = 0.01, 最终学习率为lr_init * end_factor = 0.01 * 0.01 = 0.0001</p>
 <div class="highlight"><pre><span></span><code><span class="nt">optimizer</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">optimizer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">momentum</span>
 <span class="w">  </span><span class="nt">lr_init</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w">  </span><span class="c1"># initial learning rate (SGD=1E-2, Adam=1E-3)</span>
