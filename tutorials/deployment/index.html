@@ -1449,18 +1449,24 @@
 </code></pre></div>
 <h2 id="mindspore-lite-environment-preparation">MindSpore Lite environment preparation<a class="headerlink" href="#mindspore-lite-environment-preparation" title="Permanent link">&para;</a></h2>
 <p>Reference: <a href="https://mindspore.cn/lite">Lite environment configuration</a> <br>
-   Note: The python environment that MindSpore Lite is adapted to is 3.7. Please prepare the python3.7 environment before installing Lite <br>
-   1. Depending on the environment, download the matching tar.gz package and whl package.
-   2. Unzip the tar.gz package and install the corresponding version of the whl package
+   Note: The python environment that MindSpore Lite is adapted to is 3.7. Please prepare the python3.7 environment before installing Lite <br></p>
+<ol>
+<li>
+<p>Depending on the environment, download the matching tar.gz package and whl package.</p>
+</li>
+<li>
+<p>Unzip the tar.gz package and install the corresponding version of the whl package
    <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-zxvf<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.tar.gz
 pip<span class="w"> </span>install<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.whl
-</code></pre></div>
-   3. Configure Lite environment variables
+</code></pre></div></p>
+</li>
+<li>Configure Lite environment variables
    LITE_HOME is the folder path extracted from tar.gz. It is recommended to use the absolute path.
    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LITE_HOME</span><span class="o">=</span>/path/to/mindspore-lite-<span class="o">{</span>version<span class="o">}</span>-<span class="o">{</span>os<span class="o">}</span>-<span class="o">{</span>platform<span class="o">}</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/runtime/lib:<span class="nv">$LITE_HOME</span>/tools/converter/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/tools/converter/converter:<span class="nv">$LITE_HOME</span>/tools/benchmark:<span class="nv">$PATH</span>
-</code></pre></div></p>
+</code></pre></div></li>
+</ol>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <h3 id="model-conversion">Model conversion<a class="headerlink" href="#model-conversion" title="Permanent link">&para;</a></h3>
 <p>Convert ckpt model to mindir model, this step can be run on CPU/Ascend910
@@ -1490,14 +1496,23 @@ python<span class="w"> </span>deploy/predict.py<span class="w"> </span>--model_t
 <h2 id="mindx-deployment">MindX Deployment<a class="headerlink" href="#mindx-deployment" title="Permanent link">&para;</a></h2>
 <h3 id="environment-configuration">Environment configuration<a class="headerlink" href="#environment-configuration" title="Permanent link">&para;</a></h3>
 <p>Reference: <a href="https://www.hiascend.com/document/detail/zh/mind-sdk/300/quickstart/visionquickstart/visionquickstart_0003.html">MindX environment preparation</a> <br>
-Note: MindX currently supports python version 3.9. Please prepare the python3.9 environment before installing MindX <br>
-1. Obtain the [Environment Installation Package] (https://www.hiascend.com/software/mindx-sdk/commercial) from the MindX official website. Currently, version 3.0.0 of MindX infer is supported.
-2. Jump to the <a href="https://support.huawei.com/enterprise/zh/ascend-computing/mindx-pid-252501207/software/255398987?idAbsPath=fixnode01%7C23710424%7C251366513%7C22892968%7C252501207">Download page</a> Download Ascend-mindxsdk-mxmanufacture_{version}_linux-{arch}.run
-3. Place the installation package in the Ascend310 machine directory and unzip it
-4. If you are not a root user, you need to add executable permissions to the package:
+Note: MindX currently supports python version 3.9. Please prepare the python3.9 environment before installing MindX <br></p>
+<ol>
+<li>
+<p>Obtain the [Environment Installation Package] (https://www.hiascend.com/software/mindx-sdk/commercial) from the MindX official website. Currently, version 3.0.0 of MindX infer is supported.</p>
+</li>
+<li>
+<p>Jump to the <a href="https://support.huawei.com/enterprise/zh/ascend-computing/mindx-pid-252501207/software/255398987?idAbsPath=fixnode01%7C23710424%7C251366513%7C22892968%7C252501207">Download page</a> Download Ascend-mindxsdk-mxmanufacture_{version}_linux-{arch}.run</p>
+</li>
+<li>
+<p>Place the installation package in the Ascend310 machine directory and unzip it</p>
+</li>
+<li>
+<p>If you are not a root user, you need to add executable permissions to the package:
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>Ascend-mindxsdk-mxmanufacture_<span class="o">{</span>version<span class="o">}</span>_linux-<span class="o">{</span>arch<span class="o">}</span>.run
-</code></pre></div>
-5. Enter the upload path of the development kit package and install the mxManufacture development kit package.
+</code></pre></div></p>
+</li>
+<li>Enter the upload path of the development kit package and install the mxManufacture development kit package.
 <div class="highlight"><pre><span></span><code>./Ascend-mindxsdk-mxmanufacture_<span class="o">{</span>version<span class="o">}</span>_linux-<span class="o">{</span>arch<span class="o">}</span>.run<span class="w"> </span>--install
 </code></pre></div>
 After the installation is completed, if the following echo appears, it means that the software was successfully installed.
@@ -1517,13 +1532,14 @@ After the installation is complete, the mxManufacture software directory structu
 ├── set_env.sh
 ├── toolkit
 └── version.info
-</code></pre></div>
-6. Enter the installation directory of mxmanufacture and run the following command to make the MindX SDK environment variables take effect.
+</code></pre></div></li>
+<li>Enter the installation directory of mxmanufacture and run the following command to make the MindX SDK environment variables take effect.
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>set_env.sh
-</code></pre></div>
-7. Enter ./mxVision-3.0.0/python/ and install mindx-3.0.0-py3-none-any.whl
+</code></pre></div></li>
+<li>Enter ./mxVision-3.0.0/python/ and install mindx-3.0.0-py3-none-any.whl
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mindx-3.0.0-py3-none-any.whl
-</code></pre></div></p>
+</code></pre></div></li>
+</ol>
 <h3 id="model-conversion_1">Model conversion<a class="headerlink" href="#model-conversion_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1557,8 +1573,12 @@ python<span class="w"> </span>./deploy/predict.py<span class="w"> </span>--model
 <p>mindspore&gt;=2.1</p>
 <h3 id="precautions">Precautions<a class="headerlink" href="#precautions" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Currently only supports Predict</li>
-<li>Theoretically, it can also run on Ascend910, but it has not been tested.</li>
+<li>
+<p>Currently only supports Predict</p>
+</li>
+<li>
+<p>Theoretically, it can also run on Ascend910, but it has not been tested.</p>
+</li>
 </ol>
 <h3 id="model-conversion_2">Model conversion<a class="headerlink" href="#model-conversion_2" title="Permanent link">&para;</a></h3>
 <p>Convert the ckpt model to the mindir model, this step can be run on the CPU
@@ -1582,10 +1602,17 @@ pip<span class="w"> </span>install<span class="w"> </span>onnxruntime&gt;<span c
 </code></pre></div>
 <h3 id="precautions_1">Precautions<a class="headerlink" href="#precautions_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Currently not all mindyolo supports ONNX export and inference (only YoloV3 is used as an example)</li>
-<li>Currently only supports the Predict function</li>
-<li>Exporting ONNX requires adjusting the nn.SiLU operator and using the underlying implementation of the sigmoid operator.
-For example: add the following custom layer and replace all nn.SiLU in mindyolo
+<li>
+<p>Currently not all mindyolo supports ONNX export and inference (only YoloV3 is used as an example)</p>
+</li>
+<li>
+<p>Currently only supports the Predict function</p>
+</li>
+<li>
+<p>Exporting ONNX requires adjusting the nn.SiLU operator and using the underlying implementation of the sigmoid operator.</p>
+</li>
+</ol>
+<p>For example: add the following custom layer and replace all nn.SiLU in mindyolo
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">EdgeSiLU</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Cell</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SiLU activation function: x * sigmoid(x). To support for onnx export with nn.SiLU.</span>
@@ -1596,8 +1623,7 @@ For example: add the following custom layer and replace all nn.SiLU in mindyolo
 
     <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">ops</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></div></li>
-</ol>
+</code></pre></div></p>
 <h3 id="model-conversion_3">Model conversion<a class="headerlink" href="#model-conversion_3" title="Permanent link">&para;</a></h3>
 <p>Convert the ckpt model to an ONNX model. This step and the Test step can only be run on the CPU.
    <div class="highlight"><pre><span></span><code>python<span class="w"> </span>./deploy/export.py<span class="w"> </span>--config<span class="w"> </span>./path_to_config/model.yaml<span class="w"> </span>--weight<span class="w"> </span>./path_to_ckpt/weight.ckpt<span class="w"> </span>--per_batch_size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--file_format<span class="w"> </span>ONNX<span class="w"> </span>--device_target<span class="w"> </span><span class="o">[</span>CPU<span class="o">]</span>

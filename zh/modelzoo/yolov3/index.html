@@ -1244,7 +1244,7 @@
 <p><a href="https://arxiv.org/pdf/1804.02767.pdf">YOLOv3: An Incremental Improvement</a></p>
 </blockquote>
 <h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>我们对 YOLO 新增的一些更新！我们做了一些小的设计更改以使其表现更好。我们还训练了这个非常棒的新网络。它比上次大一点，但更准确。不过它仍然很快，不用担心。在 320x320 分辨率下，YOLOv3 运行时间为 22 毫秒，mAP 为 28.2，与 SSD 一样准确，但速度快三倍。而对于 .5 IOU mAP 检测指标，YOLOv3 的表现也相当不错。它在 Titan X 上以 51 毫秒实现了 57.9 mAP@50，而 RetinaNet 则以 198 毫秒实现了 57.5 mAP@50，性能相似但速度快 3.8 倍。</p>
+<p>我们对YOLO进行了一系列更新！它包含一堆小设计，可以使系统的性能得到更新。我们也训练了一个新的、比较大的神经网络。虽然比上一版更大一些，但是精度也提高了。不用担心，它的速度依然很快。YOLOv3在320×320输入图像上运行时只需22ms，并能达到28.2mAP，其精度和SSD相当，但速度要快上3倍。使用之前0.5 IOU mAP的检测指标，YOLOv3的效果是相当不错。YOLOv3使用Titan X GPU，其耗时51ms检测精度达到57.9 AP50，与RetinaNet相比，其精度只有57.5 AP50，但却耗时198ms，相同性能的条件下YOLOv3速度比RetinaNet快3.8倍。</p>
 <div align=center>
 <img src="https://raw.githubusercontent.com/zhanghuiyao/pics/main/mindyolo202304071143644.png"/>
 </div>
@@ -1318,7 +1318,7 @@
 <h4 id="_3">说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Box mAP：验证集上测试出的准确度。</li>
-<li>我们参考了常用的第三方 <a href="https://github.com/ultralytics/yolov3">YOLOv3</a> 实现。</li>
+<li>我们参考了常用的第三方 <a href="https://github.com/ultralytics/yolov3">YOLOv3</a> 的实现。</li>
 </ul>
 <h2 id="_4">快速入门<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>详情请参阅 MindYOLO 中的 <a href="../../tutorials/quick_start/">快速入门</a>。</p>
@@ -1338,7 +1338,7 @@ mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
 </blockquote>
 <p>同样的，您可以使用上述mpirun命令在多台GPU设备上训练模型。</p>
 <p>有关所有超参数的详细说明，请参阅<a href="https://github.com/mindspore-lab/mindyolo/blob/master/mindyolo/utils/config.py">config.py</a>。</p>
-<p>**注意：**由于全局batch size（batch_size x num_devices）是一个重要的超参数，建议保持全局batch size不变进行复制，或者将学习率线性调整为新的全局batch size。</p>
+<p><strong>注意：</strong> 由于全局batch size（batch_size x 设备数）是一个重要的超参数，建议保持全局batch size不变进行复制，或者将学习率线性调整为新的全局batch size。</p>
 <h4 id="-_2">- 单卡训练<a class="headerlink" href="#-_2" title="Permanent link">&para;</a></h4>
 <p>如果您想在较小的数据集上训练或微调模型而不进行分布式训练，请运行：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 在 CPU/GPU/Ascend 设备上进行单卡训练</span>

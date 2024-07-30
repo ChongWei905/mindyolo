@@ -466,15 +466,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#from-vsc" class="md-nav__link">
-    from VSC
+  <a href="#vsc" class="md-nav__link">
+    通过VSC安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-local-src" class="md-nav__link">
-    from local src
+  <a href="#src" class="md-nav__link">
+    通过本地src安装
   </a>
   
 </li>
@@ -1080,15 +1080,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#from-vsc" class="md-nav__link">
-    from VSC
+  <a href="#vsc" class="md-nav__link">
+    通过VSC安装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#from-local-src" class="md-nav__link">
-    from local src
+  <a href="#src" class="md-nav__link">
+    通过本地src安装
   </a>
   
 </li>
@@ -1132,25 +1132,25 @@
 <h1 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">依赖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>mindspore &gt;= 2.0</li>
+<li>mindspore &gt;= 2.3</li>
 <li>numpy &gt;= 1.17.0</li>
 <li>pyyaml &gt;= 5.3</li>
 <li>openmpi 4.0.3 (分布式训练所需)</li>
 </ul>
-<p>为了安装<code>python</code>相关库依赖，只需运行：</p>
+<p>如需安装<code>python</code>相关库依赖，只需运行：</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
-<p>MindSpore可以通过遵循<a href="https://www.mindspore.cn/install">官方指引</a>，在不同的硬件平台上获得最优的安装体验。 为了在分布式模式下运行，您还需要安装<a href="https://www.open-mpi.org/software/ompi/v4.0/">OpenMPI</a>。</p>
+<p>如需安装MindSpore，你可以通过遵循<a href="https://www.mindspore.cn/install">官方指引</a>，在不同的硬件平台上获得最优的安装体验。 为了在分布式模式下运行，您还需要安装<a href="https://www.open-mpi.org/software/ompi/v4.0/">OpenMPI</a>。</p>
 <p>⚠️ 当前版本仅支持Ascend平台，GPU会在后续支持，敬请期待。</p>
 <h2 id="pypi">PyPI源安装<a class="headerlink" href="#pypi" title="Permanent link">&para;</a></h2>
-<p>MindYOLO 发布为一个<code>Python包</code>并能够通过<code>pip</code>进行安装。我们推荐您在<code>虚拟环境</code>安装使用。 打开终端，输入以下指令来安装 MindYOLO:</p>
+<p>MindYOLO 现已发布为一个<code>Python包</code>并能够通过<code>pip</code>进行安装。我们推荐您在<code>虚拟环境</code>安装使用。 打开终端，输入以下指令来安装 MindYOLO:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mindyolo
 </code></pre></div>
 <h2 id="_3">源码安装 (未经测试版本)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="from-vsc">from VSC<a class="headerlink" href="#from-vsc" title="Permanent link">&para;</a></h3>
+<h3 id="vsc">通过VSC安装<a class="headerlink" href="#vsc" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/mindspore-lab/mindyolo.git
 </code></pre></div>
-<h3 id="from-local-src">from local src<a class="headerlink" href="#from-local-src" title="Permanent link">&para;</a></h3>
+<h3 id="src">通过本地src安装<a class="headerlink" href="#src" title="Permanent link">&para;</a></h3>
 <p>由于本项目处于活跃开发阶段，如果您是开发者或者贡献者，请优先选择此安装方式。</p>
 <p>MindYOLO 可以在由 <code>GitHub</code> 克隆仓库到本地文件夹后直接使用。 这对于想使用最新版本的开发者十分方便:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mindspore-lab/mindyolo.git
@@ -1163,7 +1163,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mindyolo/csrc
 sh<span class="w"> </span>build.sh
 </code></pre></div>
-<p>我们还提供了基于MindSpore <a href="https://www.mindspore.cn/tutorials/experts/zh-CN/master/operation/op_custom.html">Custom自定义算子</a> 的GPU融合算子，用于提升训练过程的速度。代码采用C++和CUDA开发，位于<code>examples/custom_gpu_op/</code>路径下。您可参考示例脚本<code>examples/custom_gpu_op/iou_loss_fused.py</code>，修改<code>mindyolo/models/losses/iou_loss.py</code>的<code>bbox_iou</code>方法，在GPU训练过程中使用该特性。运行<code>iou_loss_fused.py</code>前，需要使用以下的命令，编译生成GPU融合算子运行所依赖的动态库 <strong>(此操作是可选的)</strong> :</p>
+<p>我们还提供了基于MindSpore <a href="https://www.mindspore.cn/tutorials/experts/zh-CN/master/operation/op_custom.html">Custom自定义算子</a> 的GPU融合算子，用于提升训练过程的速度。代码采用C++和CUDA开发，位于<code>examples/custom_gpu_op/</code>路径下。您可参考示例脚本<code>examples/custom_gpu_op/iou_loss_fused.py</code>，修改<code>mindyolo/models/losses/iou_loss.py</code>的<code>bbox_iou</code>方法，在GPU训练过程中使用该特性。运行<code>iou_loss_fused.py</code>前，需要使用以下的命令，编译生成GPU融合算子运行所依赖的动态库 <strong>(此操作并非必需)</strong> :</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>examples/custom_gpu_op/fused_op/build.sh
 </code></pre></div>
 

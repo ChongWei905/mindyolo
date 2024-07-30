@@ -1449,18 +1449,24 @@
 </code></pre></div>
 <h2 id="mindspore-lite">MindSpore Lite环境准备<a class="headerlink" href="#mindspore-lite" title="Permanent link">&para;</a></h2>
 <p>参考：<a href="https://mindspore.cn/lite">Lite环境配置</a> <br>
-   注意：MindSpore Lite适配的python环境为3.7，请在安装Lite前准备好python3.7的环境 <br>
-   1. 根据环境，下载配套的tar.gz包和whl包
-   2. 解压tar.gz包并安装对应版本的whl包
+   注意：MindSpore Lite适配的python环境为3.7，请在安装Lite前准备好python3.7的环境 <br></p>
+<ol>
+<li>
+<p>根据环境，下载配套的tar.gz包和whl包</p>
+</li>
+<li>
+<p>解压tar.gz包并安装对应版本的whl包
    <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-zxvf<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.tar.gz
 pip<span class="w"> </span>install<span class="w"> </span>mindspore_lite-2.0.0a0-cp37-cp37m-<span class="o">{</span>os<span class="o">}</span>_<span class="o">{</span>platform<span class="o">}</span>_64.whl
-</code></pre></div>
-   3. 配置Lite的环境变量
+</code></pre></div></p>
+</li>
+<li>配置Lite的环境变量
    LITE_HOME为tar.gz解压出的文件夹路径，推荐使用绝对路径
    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LITE_HOME</span><span class="o">=</span>/path/to/mindspore-lite-<span class="o">{</span>version<span class="o">}</span>-<span class="o">{</span>os<span class="o">}</span>-<span class="o">{</span>platform<span class="o">}</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/runtime/lib:<span class="nv">$LITE_HOME</span>/tools/converter/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$LITE_HOME</span>/tools/converter/converter:<span class="nv">$LITE_HOME</span>/tools/benchmark:<span class="nv">$PATH</span>
-</code></pre></div></p>
+</code></pre></div></li>
+</ol>
 <h2 id="_3">快速开始<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">模型转换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>ckpt模型转为mindir模型，此步骤可在CPU/Ascend910上运行
@@ -1490,14 +1496,23 @@ python<span class="w"> </span>deploy/predict.py<span class="w"> </span>--model_t
 <h2 id="mindx">MindX部署<a class="headerlink" href="#mindx" title="Permanent link">&para;</a></h2>
 <h3 id="_6">环境配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>参考：<a href="https://www.hiascend.com/document/detail/zh/mind-sdk/300/quickstart/visionquickstart/visionquickstart_0003.html">MindX环境准备</a> <br>
-注意：MindX目前支持的python版本为3.9，请在安装MindX前，准备好python3.9的环境 <br>
-1. 在MindX官网获取<a href="https://www.hiascend.com/software/mindx-sdk/commercial">环境安装包</a>，目前支持3.0.0版本MindX推理
-2. 跳转至<a href="https://support.huawei.com/enterprise/zh/ascend-computing/mindx-pid-252501207/software/255398987?idAbsPath=fixnode01%7C23710424%7C251366513%7C22892968%7C252501207">下载页面</a>下载Ascend-mindxsdk-mxmanufacture_{version}_linux-{arch}.run
-3. 将安装包放置于Ascend310机器目录中并解压
-4. 如不是root用户，需增加对套件包的可执行权限：
+注意：MindX目前支持的python版本为3.9，请在安装MindX前，准备好python3.9的环境 <br></p>
+<ol>
+<li>
+<p>在MindX官网获取<a href="https://www.hiascend.com/software/mindx-sdk/commercial">环境安装包</a>，目前支持3.0.0版本MindX推理</p>
+</li>
+<li>
+<p>跳转至<a href="https://support.huawei.com/enterprise/zh/ascend-computing/mindx-pid-252501207/software/255398987?idAbsPath=fixnode01%7C23710424%7C251366513%7C22892968%7C252501207">下载页面</a>下载Ascend-mindxsdk-mxmanufacture_{version}_linux-{arch}.run</p>
+</li>
+<li>
+<p>将安装包放置于Ascend310机器目录中并解压</p>
+</li>
+<li>
+<p>如不是root用户，需增加对套件包的可执行权限：
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>Ascend-mindxsdk-mxmanufacture_<span class="o">{</span>version<span class="o">}</span>_linux-<span class="o">{</span>arch<span class="o">}</span>.run
-</code></pre></div>
-5. 进入开发套件包的上传路径，安装mxManufacture开发套件包。
+</code></pre></div></p>
+</li>
+<li>进入开发套件包的上传路径，安装mxManufacture开发套件包。
 <div class="highlight"><pre><span></span><code>./Ascend-mindxsdk-mxmanufacture_<span class="o">{</span>version<span class="o">}</span>_linux-<span class="o">{</span>arch<span class="o">}</span>.run<span class="w"> </span>--install
 </code></pre></div>
 安装完成后，若出现如下回显，表示软件成功安装。
@@ -1517,13 +1532,14 @@ python<span class="w"> </span>deploy/predict.py<span class="w"> </span>--model_t
 ├── set_env.sh
 ├── toolkit
 └── version.info
-</code></pre></div>
-6. 进入mxmanufacture的安装目录，运行以下命令，使MindX SDK环境变量生效。
+</code></pre></div></li>
+<li>进入mxmanufacture的安装目录，运行以下命令，使MindX SDK环境变量生效。
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>set_env.sh
-</code></pre></div>
-7. 进入./mxVision-3.0.0/python/，安装mindx-3.0.0-py3-none-any.whl
+</code></pre></div></li>
+<li>进入./mxVision-3.0.0/python/，安装mindx-3.0.0-py3-none-any.whl
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mindx-3.0.0-py3-none-any.whl
-</code></pre></div></p>
+</code></pre></div></li>
+</ol>
 <h3 id="_7">模型转换<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1557,8 +1573,12 @@ python<span class="w"> </span>./deploy/predict.py<span class="w"> </span>--model
 <p>mindspore&gt;=2.1</p>
 <h3 id="_9">注意事项<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ol>
-<li>当前仅支持Predict</li>
-<li>理论上也可在Ascend910上运行，未测试</li>
+<li>
+<p>当前仅支持Predict</p>
+</li>
+<li>
+<p>理论上也可在Ascend910上运行，未测试</p>
+</li>
 </ol>
 <h3 id="_10">模型转换<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>ckpt模型转为mindir模型，此步骤可在CPU上运行
@@ -1583,10 +1603,17 @@ pip<span class="w"> </span>install<span class="w"> </span>onnxruntime&gt;<span c
 </code></pre></div>
 <h3 id="_12">注意事项<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ol>
-<li>当前并非所有mindyolo均支持ONNX导出和推理（仅以YoloV3为例）</li>
-<li>当前仅支持Predict功能</li>
-<li>导出ONNX需要调整nn.SiLU算子，采用sigmoid算子底层实现<br />
-例如：添加如下自定义层并替换mindyolo中所有的nn.SiLU
+<li>
+<p>当前并非所有mindyolo均支持ONNX导出和推理（仅以YoloV3为例）</p>
+</li>
+<li>
+<p>当前仅支持Predict功能</p>
+</li>
+<li>
+<p>导出ONNX需要调整nn.SiLU算子，采用sigmoid算子底层实现  </p>
+</li>
+</ol>
+<p>例如：添加如下自定义层并替换mindyolo中所有的nn.SiLU
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">EdgeSiLU</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Cell</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SiLU activation function: x * sigmoid(x). To support for onnx export with nn.SiLU.</span>
@@ -1597,8 +1624,7 @@ pip<span class="w"> </span>install<span class="w"> </span>onnxruntime&gt;<span c
 
     <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">ops</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></div></li>
-</ol>
+</code></pre></div></p>
 <h3 id="_13">模型转换<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>ckpt模型转为ONNX模型，此步骤以及Test步骤均仅支持CPU上运行
    <div class="highlight"><pre><span></span><code>python<span class="w"> </span>./deploy/export.py<span class="w"> </span>--config<span class="w"> </span>./path_to_config/model.yaml<span class="w"> </span>--weight<span class="w"> </span>./path_to_ckpt/weight.ckpt<span class="w"> </span>--per_batch_size<span class="w"> </span><span class="m">1</span><span class="w"> </span>--file_format<span class="w"> </span>ONNX<span class="w"> </span>--device_target<span class="w"> </span><span class="o">[</span>CPU<span class="o">]</span>

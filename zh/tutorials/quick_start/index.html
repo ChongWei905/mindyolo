@@ -1188,11 +1188,13 @@ python<span class="w"> </span>demo/predict.py<span class="w"> </span>--config<sp
 * 在多卡NPU/GPU上进行分布式评估模型的精度：</p>
 <div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>--allow-run-as-root<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>test.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="w"> </span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--is_parallel<span class="w"> </span>True
 </code></pre></div>
-<p><em>注意：默认超参为8卡训练，单卡情况需调整部分参数。 默认设备为Ascend，您可以指定'device_target'的值为Ascend/GPU/CPU。</em>
-* 有关更多选项，请参阅 <code>train/test.py -h</code>.
-* 在CloudBrain上进行训练，请在<a href="./tutorials/cloud/modelarts_CN.md">这里</a>查看</p>
+<p><em>注意：</em></p>
+<p><em>(1) 默认超参为8卡训练，单卡情况需调整部分参数。</em></p>
+<p><em>(2) 默认设备为Ascend，您可以指定'device_target'的值为Ascend/GPU/CPU。</em></p>
+<p><em>有关更多选项，请参阅 <code>train/test.py -h</code>。</em></p>
+<p><em>在CloudBrain上进行训练，请在<a href="./tutorials/cloud/modelarts_CN.md">这里</a>查看</em></p>
 <h3 id="_4">部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>请在<a href="../deployment/">这里</a>查看.</p>
+<p>请在<a href="../deployment/">部署</a>查看.</p>
 <h3 id="mindyolo-api">在代码中使用MindYOLO API<a class="headerlink" href="#mindyolo-api" title="Permanent link">&para;</a></h3>
 <p>敬请期待</p>
 

@@ -1188,10 +1188,12 @@ to understand their behavior. Some common arguments are:
 <li>To evaluate a model's performance 8 NPUs/GPUs:
   <div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>--allow-run-as-root<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>python<span class="w"> </span>test.py<span class="w"> </span>--config<span class="w"> </span>./configs/yolov7/yolov7.yaml<span class="w"> </span>--weight<span class="w"> </span>/path_to_ckpt/WEIGHT.ckpt<span class="w"> </span>--is_parallel<span class="w"> </span>True
 </code></pre></div>
-<em>Notes: (1) The default hyper-parameter is used for 8-card training, and some parameters need to be adjusted in the case of a single card. (2) The default device is Ascend, and you can modify it by specifying 'device_target' as Ascend/GPU/CPU, as these are currently supported.</em></li>
-<li>For more options, see <code>train/test.py -h</code>.</li>
-<li>To train on CloudBrain, see <a href="../modelarts/">here</a></li>
+<em>Notes:</em></li>
 </ul>
+<p><em>(1) The default hyper-parameter is used for 8-card training, and some parameters need to be adjusted in the case of a single card.</em></p>
+<p><em>(2) The default device is Ascend, and you can modify it by specifying 'device_target' as Ascend/GPU/CPU, as these are currently supported.</em></p>
+<p><em>For more options, see <code>train/test.py -h</code>.</em></p>
+<p><em>To train on CloudBrain, see <a href="../modelarts/">here</a></em></p>
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <p>See <a href="../deployment/">here</a>.</p>
 <h3 id="to-use-mindyolo-apis-in-your-code">To use MindYOLO APIs in Your Code<a class="headerlink" href="#to-use-mindyolo-apis-in-your-code" title="Permanent link">&para;</a></h3>
