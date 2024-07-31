@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/"/>
@@ -10,7 +10,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/installation/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/installation/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/installation/"/>
@@ -18,7 +18,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/how_to_guides/callback/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/how_to_guides/callback/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/how_to_guides/callback/"/>
@@ -26,7 +26,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/how_to_guides/data_preparation/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/how_to_guides/data_preparation/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/how_to_guides/data_preparation/"/>
@@ -34,7 +34,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/how_to_guides/write_a_new_model/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/how_to_guides/write_a_new_model/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/how_to_guides/write_a_new_model/"/>
@@ -42,7 +42,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/benchmark/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/benchmark/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/benchmark/"/>
@@ -50,7 +50,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolov3/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolov3/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolov3/"/>
@@ -58,7 +58,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolov4/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolov4/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolov4/"/>
@@ -66,7 +66,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolov5/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolov5/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolov5/"/>
@@ -74,7 +74,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolov7/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolov7/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolov7/"/>
@@ -82,7 +82,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolov8/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolov8/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolov8/"/>
@@ -90,7 +90,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/modelzoo/yolox/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/modelzoo/yolox/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/modelzoo/yolox/"/>
@@ -98,7 +98,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/notes/changelog/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/notes/changelog/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/notes/changelog/"/>
@@ -106,7 +106,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/notes/code_of_conduct/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/notes/code_of_conduct/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/notes/code_of_conduct/"/>
@@ -114,7 +114,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/notes/contributing/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/notes/contributing/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/notes/contributing/"/>
@@ -122,7 +122,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/notes/faq/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/notes/faq/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/notes/faq/"/>
@@ -130,7 +130,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/reference/data/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/reference/data/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/reference/data/"/>
@@ -138,7 +138,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/reference/models/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/reference/models/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/reference/models/"/>
@@ -146,7 +146,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/configuration/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/configuration/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/configuration/"/>
@@ -154,7 +154,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/data_augmentation/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/data_augmentation/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/data_augmentation/"/>
@@ -162,7 +162,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/deployment/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/deployment/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/deployment/"/>
@@ -170,7 +170,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/finetune/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/finetune/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/finetune/"/>
@@ -178,7 +178,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/modelarts/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/modelarts/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/modelarts/"/>
@@ -186,7 +186,7 @@
     </url>
     <url>
          <loc>https://mindspore-lab.github.io/mindyolo/tutorials/quick_start/</loc>
-         <lastmod>2024-07-30</lastmod>
+         <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://mindspore-lab.github.io/mindyolo/en/tutorials/quick_start/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://mindspore-lab.github.io/mindyolo/zh/tutorials/quick_start/"/>
