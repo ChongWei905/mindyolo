@@ -23,40 +23,15 @@ AP (65.7% AP50) for the MS COCO dataset at a realtime speed of 65 FPS on Tesla V
 <img src="https://github.com/yuedongli1/images/raw/master/mindyolo20230509.png"/>
 </div>
 
-## Performance
+## Requirements
 
-<details open markdown>
-<summary><b>Experiments are tested on Ascend 910(8p) with mindspore 2.3.1 graph mode</b></summary>
-
-| model name |     backbone       | cards  | batch size | resolution |  jit level  | graph compile | ms/step | img/s  |     mAP     |         recipe              | weight                                                                           
-| :--------: |        :---:       |  :---: |   :---:    |   :---:    |    :---:    |     :---:     |  :---:  | :---:  |    :---:    |         :---:               |        :---:       |
-|   YOLOv4   |    CSPDarknet53    |    8   |     16     |   608x608  |     O2      |    188.52s    | 505.98  | 252.97 |    45.4%    | [yaml](./yolov4.yaml)       | [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_320e_map454-50172f93.ckpt)      |
-|   YOLOv4   | CSPDarknet53(silu) |    8   |     16     |   608x608  |     O2      |    274.18s    | 443.21  | 288.80 |    45.8%    | [yaml](./yolov4-silu.yaml)  | [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_silu_320e_map458-bdfc3205.ckpt) |
-</details>
-
-<details open markdown>
-<summary><b>Experiments are tested on Ascend 910*(8p) with mindspore 2.3.1 graph mode</b></summary>
-
-| model name |     backbone    | cards  | batch size | resolution |  jit level  | graph compile | ms/step | img/s  |     mAP     |          recipe        | weight                                                                                                             |
-| :--------: |      :---:      |  :---: |   :---:    |   :---:    |    :---:    |     :---:     |  :---:  | :---:  |    :---:    |          :---:         |        :---:       |
-|   YOLOv4   |   CSPDarknet53  |    8   |     16     |   608x608  |     O2      |    467.47s    | 308.43  | 415.01 |    46.1%    | [yaml](./yolov4.yaml)  | [weights](https://download-mindspore.osinfra.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_320e_map454-64b8506f-910v2.ckpt)      |
-</details>
-
-<br>
-
-#### Notes
-
-- Box mAP: Accuracy reported on the validation set.
+| mindspore | ascend driver | firmware     | cann toolkit/kernel |
+| :-------: | :-----------: | :----------: |:-------------------:|
+| 2.3.1     | 24.1.RC2      | 7.3.0.1.231  |   8.0.RC2.beta1     |
 
 ## Quick Start
 
 Please refer to the [GETTING_STARTED](https://github.com/mindspore-lab/mindyolo/blob/master/GETTING_STARTED.md) in MindYOLO for details.
-
-### Requirements
-
-| mindspore | ascend driver | firmware     | cann toolkit/kernel
-| :-------: | :-----------: | :----------: | :----------------:
-| 2.3.1     | 24.1.RC2      | 7.3.0.1.231  | 8.0.RC2.beta1
 
 ### Training
 
@@ -111,9 +86,29 @@ To validate the accuracy of the trained model, you can use `test.py` and parse t
 python test.py --config ./configs/yolov4/yolov4-silu.yaml --device_target Ascend --iou_thres 0.6 --weight /PATH/TO/WEIGHT.ckpt
 ```
 
-### Deployment
+## Performance
 
-See [here](../../deploy/README.md).
+Experiments are tested on Ascend 910* with mindspore 2.3.1 graph mode.
+
+| model name |     backbone    | cards  | batch size | resolution |  jit level  | graph compile | ms/step | img/s  |  map  |         recipe          |                                                            weight                                                             |
+| :--------: |      :---:      |  :---: |   :---:    |   :---:    |    :---:    |     :---:     |  :---:  | :---:  |:-----:|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|
+|   YOLOv4   |   CSPDarknet53  |    8   |     16     |   608x608  |     O2      |    467.47s    | 308.43  | 415.01 | 46.1% |  [yaml](./yolov4.yaml)  | [weights](https://download-mindspore.osinfra.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_320e_map454-64b8506f-910v2.ckpt) |
+
+
+Experiments are tested on Ascend 910 with mindspore 2.3.1 graph mode.
+
+| model name |     backbone       | cards  | batch size | resolution |  jit level  | graph compile | ms/step | img/s  |  map  |            recipe            |                                                        weight                                                        |
+| :--------: |        :---:       |  :---: |   :---:    |   :---:    |    :---:    |     :---:     |  :---:  | :---:  |:-----:|:----------------------------:|:--------------------------------------------------------------------------------------------------------------------:|
+|   YOLOv4   |    CSPDarknet53    |    8   |     16     |   608x608  |     O2      |    188.52s    | 505.98  | 252.97 | 45.4% |    [yaml](./yolov4.yaml)     |   [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_320e_map454-50172f93.ckpt)    |
+|   YOLOv4   | CSPDarknet53(silu) |    8   |     16     |   608x608  |     O2      |    274.18s    | 443.21  | 288.80 | 45.8% |  [yaml](./yolov4-silu.yaml)  | [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov4/yolov4-cspdarknet53_silu_320e_map458-bdfc3205.ckpt) |
+
+
+<br>
+
+### Notes
+
+- map: Accuracy reported on the validation set.
+
 
 ## References
 

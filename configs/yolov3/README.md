@@ -9,40 +9,16 @@ We present some updates to YOLO! We made a bunch of little design changes to mak
 <img src="https://raw.githubusercontent.com/zhanghuiyao/pics/main/mindyolo202304071143644.png"/>
 </div>
 
-## Performance
+## Requirements
 
-<details open markdown>
-<summary><b>Experiments are tested on Ascend 910(8p) with mindspore 2.3.1 graph mode</b></summary>
+| mindspore | ascend driver | firmware     | cann toolkit/kernel |
+| :-------: | :-----------: | :----------: | :----------------: |
+| 2.3.1     | 24.1.RC2      | 7.3.0.1.231  | 8.0.RC2.beta1 |
 
-| model name | cards  | batch size | resolution |  jit level  | graph compile  | ms/step | img/s  |     mAP     |        recipe           | weight                                                        |
-|  :------:  |  :---: |   :---:    |    :---:   |    :---:    |     :---:      |  :---:  | :---:  |    :---:    |         :---:           |        :---:       |
-|   YOLOv3   |    8   |    16      |   640x640  |     O2      |    160.80s     | 409.66  | 312.45 |    45.5%    |  [yaml](./yolov3.yaml)  | [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov3/yolov3-darknet53_300e_mAP455-adfb27af.ckpt)            |
-</details>
-
-<details open markdown>
-<summary><b>Experiments are tested on Ascend 910*(8p) with mindspore 2.3.1 graph mode</b></summary>
-
-| model name | cards  | batch size | resolution |  jit level  | graph compile  | ms/step | img/s  |      mAP    |        recipe           | weight                                                                                        |
-|  :------:  |  :---: |   :---:    |   :---:    |    :---:    |     :---:      |  :---:  | :---:  |    :---:    |      :---:           |        :---:       |
-|   YOLOv3   |    8   |    16      |   640x640  |     O2      |    274.32s     | 383.68  | 333.61 |    46.6%    |  [yaml](./yolov3.yaml)  | [weights](https://download-mindspore.osinfra.cn/toolkits/mindyolo/yolov3/yolov3-darknet53_300e_mAP455-81895f09-910v2.ckpt)         |
-</details>
-
-<br>
-
-#### Notes
-
-- Box mAP: Accuracy reported on the validation set.
-- We referred to a commonly used third-party [YOLOv3](https://github.com/ultralytics/yolov3) implementation.
 
 ## Quick Start
 
 Please refer to the [GETTING_STARTED](https://github.com/mindspore-lab/mindyolo/blob/master/GETTING_STARTED.md) in MindYOLO for details.
-
-### Requirements
-
-| mindspore | ascend driver | firmware     | cann toolkit/kernel
-| :-------: | :-----------: | :----------: | :----------------:
-| 2.3.1     | 24.1.RC2      | 7.3.0.1.231  | 8.0.RC2.beta1
 
 ### Training
 
@@ -92,9 +68,29 @@ To validate the accuracy of the trained model, you can use `test.py` and parse t
 python test.py --config ./configs/yolov3/yolov3.yaml --device_target Ascend --weight /PATH/TO/WEIGHT.ckpt
 ```
 
-### Deployment
+## Performance
 
-See [here](../../deploy/README.md).
+Experiments are tested on Ascend 910* with mindspore 2.3.1 graph mode.
+
+| model name | cards | batch size | resolution | jit level | graph compile | ms/step | img/s  |  map  |        recipe         |                                                           weight                                                           |
+| :--------: | :---: | :--------: | :--------: | :-------: | :-----------: | :-----: | :----: | :---: | :-------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|   YOLOv3   |   8   |     16     |  640x640   |    O2     |    274.32s    | 383.68  | 333.61 | 46.6% | [yaml](./yolov3.yaml) | [weights](https://download-mindspore.osinfra.cn/toolkits/mindyolo/yolov3/yolov3-darknet53_300e_mAP455-81895f09-910v2.ckpt) |
+
+
+Experiments are tested on Ascend 910 with mindspore 2.3.1 graph mode.
+
+| model name | cards | batch size | resolution | jit level | graph compile | ms/step | img/s  |  map  |        recipe         |                                                    weight                                                    |
+| :--------: | :---: | :--------: | :--------: | :-------: | :-----------: | :-----: | :----: | :---: | :-------------------: | :----------------------------------------------------------------------------------------------------------: |
+|   YOLOv3   |   8   |     16     |  640x640   |    O2     |    160.80s    | 409.66  | 312.45 | 45.5% | [yaml](./yolov3.yaml) | [weights](https://download.mindspore.cn/toolkits/mindyolo/yolov3/yolov3-darknet53_300e_mAP455-adfb27af.ckpt) |
+
+
+<br>
+
+### Notes
+
+- map: Accuracy reported on the validation set.
+- We referred to a commonly used third-party [YOLOv3](https://github.com/ultralytics/yolov3) implementation.
+
 
 ## References
 
